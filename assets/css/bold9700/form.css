@@ -1,0 +1,94 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+.red {
+    color: #cb202a;
+}
+
+p.message, p.error {
+    font: normal 1em Helvetica, Arial, sans-serif;
+    padding: 0 3px;
+}
+
+p.message {
+    border: 1px solid #995522;
+    background-color: #e1d8b9;
+    color: black;
+}
+
+p.error {
+    border: 1px solid #193742;
+    background-color: #cb202a;
+    color: white;
+}
+
+#content {
+    width: 99%;
+    padding: 5px;
+    background-color: white;
+    min-height: 300px;
+}
+
+#content h1, #content h2 {
+    font: normal 1.4em Helvetica, Arial, sans-serif;
+    color: #3c6b92;
+}
+
+#content p, h1, h2, h3 {
+    margin-bottom: .5em;
+}
+
+#content h1 {
+    border-bottom: solid 2px #3c6b92;
+}
+
+#content h2.error {
+    color: #cb7d20;
+}
+
+/* bwTable */
+
+.bwTable {
+    margin-bottom: .5em;
+    border: 0px;
+}
+
+.bwTable tr, .bwTable td, .bwTable th {
+    font: normal 1em Helvetica, Arial, sans-serif;
+    text-align: left;
+    border: 0px;
+    padding: 1px 3px;
+}
+
+.bwTable tr:nth-child(odd) {
+    background: none;
+}
+
+.bwTable th {
+    background: none;
+    color: #fff;
+    border: 0px;
+}
+
+.bwTable td {
+}
+
+/* form */
+
+#form {
+    margin-bottom: 1px;
+}
+
+#form input[type=text] {
+	font-size:12px;
+}
+
+#form td.button, #form td.label {
+    text-align:center;
+}
+
+#form td.label {
+    padding-right: 3px;
+	font-size:14px;
+}

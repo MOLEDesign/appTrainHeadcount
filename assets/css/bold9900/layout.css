@@ -1,0 +1,49 @@
+/*  CSS Document                             */
+@charset "UTF-8";
+
+@viewport {
+  zoom: 0.5;
+}
+
+/* Global Styles */
+body { margin: 0px; padding: 0px; font-family: Helvetica; font-size: 20px; background-color:#00F; }
+
+
+/* Global Layout */
+
+header { position: absolute; top: 2px; left:0px; height:50px; }
+article { display: block; position: absolute; top: 50px; left: 15px; }
+article .content_container { position: absolute; top: 0px; left: 0px; background: none; color:#FFFFFF; }
+article .content_container .content_loading_container { position: absolute; top: 0px; padding: 5px 5px 0px 5px; }
+nav { position: absolute; bottom:55px; left:0px; height:60px; }
+footer  { display: block; position: absolute; bottom: 0px; right:0px; height: 20px; background: none; float:right;}
+
+.button_add, .button_02, .button_03, .button_04, .banner_logo_top, .banner_logo_bottom  { -webkit-transition: -webkit-transform 1s ease-in-out; }
+
+.button_01 		{ position: absolute; -webkit-transform: translate3d(-200px,0px,0px); }
+.button_02   	{ position: absolute; -webkit-transform: translate3d(-200px,0px,0px); }
+.button_03   	{ position: absolute; -webkit-transform: translate3d(700px,0px,0px); }
+.button_04  	{ position: absolute; -webkit-transform: translate3d(700px,0px,0px); }
+.banner_logo_top  	{ position: absolute; -webkit-transform: translate3d(-200px,0px,0px); }
+.banner_logo_bottom	{ position: absolute; -webkit-transform: translate3d(700px,0px,0px); }
+
+
+/* Page-specific Style and Layout */
+.page.home article .content_container { }
+
+
+/* Orientation-specific Layout - Landscape */
+.page.landscape  { position: relative; width: 640px; height: 480px; overflow: hidden; }
+.page.landscape header  { width: 640px; }
+.page.landscape article { width: 600px; height: 313px; }
+.page.landscape nav  { width: 640px; }
+.page.landscape footer  { width: 640px; }
+
+.page.landscape article .content_container { width: 600px; height: 313px; }
+
+.page.landscape nav .button_01 			{ position: absolute; width:80px; height:80px; -webkit-transform: translate3d(140px,0px,0px); }
+.page.landscape nav .button_02   		{ position: absolute; width:80px; height:80px;-webkit-transform: translate3d(245px,0px,0px); }
+.page.landscape nav .button_03   		{ position: absolute; width:80px; height:80px;-webkit-transform: translate3d(350px,0px,0px); }
+.page.landscape nav .button_04  		{ position: absolute; width:80px; height:80px;-webkit-transform: translate3d(455px,0px,0px); }
+.page.landscape header .banner_logo_top  	{ position: absolute; -webkit-transform: translate3d(0px,0px,0px); }
+.page.landscape footer .banner_logo_bottom	{ position: absolute; -webkit-transform: translate3d(0px,0px,0px); }

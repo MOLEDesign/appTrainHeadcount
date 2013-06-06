@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/* -------- color guide  ----------
+#3c6b92 : main blue
+#6acce2 : light blue
+#2c566a : teal accent
+#193742 : dark blue
+#e1d8b9 : sand accent
+#cb7d20 : orange accent
+#51341a : brown
+#995522 : dark orange (used for links or high contrast accents)
+#cb202a : red accent (this color does not encode well, use only for small accents)
+#896287 : purple
+*/
+
+/* reasonable reset */
+html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, table, tr, td,
+p, blockquote, address, time, span, em, strong, img, ol, ul, li, dl, dt, figure, canvas, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}

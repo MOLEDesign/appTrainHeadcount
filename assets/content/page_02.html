@@ -1,0 +1,50 @@
+<script type="text/javascript" charset="utf-8">
+
+	if (!db_user.getItem('fullname') || !db_user.getItem('mobilenumber')) {
+		// variable is undefined so alert and force action
+		alert('Please enter your personal details before logging headcounts');
+		changePage ('page_04.html?v=1')
+	}
+	
+	jQuery(function($) {
+		$.mask.masks.headmsk = {mask: '9a99'};
+		$('input[type="text"]').setMask();
+	});
+</script>
+	
+<!-- Load the javascript function that loads current user data -->
+<script language="javascript">
+	window.onload = dispResultsjourney();
+	// call setMask function on the document.ready event		
+<!-- end script -->
+</script>
+
+<!-- Display any data already extracted using the fuction above -->
+<div id="results">
+	<!-- results show here -->
+</div>
+<!-- End of results -->
+
+<div id="form">
+	<form id="journeyForm" method="post">
+		<table width="99%" class="form">
+			<tr>
+				<td colspan="4" align="center" class="label">
+					<b>Journey Details</b>
+				</td>
+			</tr>
+				<tr>
+				<td class="label" width="25%">Dpt Station</td>
+				<td width="25%"> <input name="deptstat" size="10" type="text" /></td>
+				<td class="label" width="25%">Dpt Time</td>
+				<td class="25%"><input name="depttime" type="time" value="" size="10" /></td>
+			</tr>
+			<tr>
+				<td class="label">Headcode</td>
+				<td><input name="headcode" type="text" size="10" maxlength="6" required="required" alt="headmsk" /></td>
+				<td>&nbsp;</td>
+				<td><input type="button" value="Store Journey Info" onclick="javascript:dbGojourney()" /></td>
+			</tr>
+		</table>
+	</form>
+</div>
