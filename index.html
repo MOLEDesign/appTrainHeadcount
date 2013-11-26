@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Train Headcount</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link href="css/codiqa.ext.css" rel="stylesheet">
+  <link href="css/jquery.mobile.theme-1.3.1.css" rel="stylesheet">
+  <link href="css/lato.css" rel="stylesheet">
+  <link href="css/jquery.mobile.structure-1.3.1.css" rel="stylesheet">
+
+  <script src="js/jquery-1.9.1.js"></script>
+  <script src="js/jquery.mobile-1.3.1.js"></script>
+  <script src="js/codiqa.ext.js"></script>
+  <script src="js/train-headcount.js"></script>
+</head>
+<body>
+  <div data-role="page" data-control-title="Home" data-theme="b" id="home"
+  class="global_page">
+      <div data-role="panel" id="panel13" data-position="left" data-display="reveal"
+      data-theme="b">
+          <ul data-role="listview" data-divider-theme="c" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  Main Options
+              </li>
+              <li data-theme="a">
+                  <a href="#journey_info" data-transition="none">
+                      Journey Info
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#count_info" data-transition="none">
+                      Add a Count
+                  </a>
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Settings
+              </li>
+              <li data-theme="a">
+                  <a href="#journey_info" data-transition="none">
+                      Basic Settings
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#journey_info" data-transition="none">
+                      Advanced
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
+          <a id="help_home" data-role="button" data-transition="none" href="#help_index"
+          data-icon="info" data-iconpos="left" class="ui-btn-right global_button">
+              Help
+          </a>
+          <a id="menu_panel" data-controltype="panelbutton" data-role="button" href="#panel13"
+          data-icon="bars" data-iconpos="left" class="ui-btn-left global_button">
+              Menu
+          </a>
+          <h3 id="home_header" class="global_header">
+              Welcome
+          </h3>
+      </div>
+      <div data-role="content" style="padding: 1%">
+          <div data-controltype="textblock" class="global_text">
+              <h3 style="text-align: center;">
+                  <b>
+                      Train Headcount App
+                      <br>
+                  </b>
+                  <b>
+                      v2.0.0
+                  </b>
+              </h3>
+          </div>
+          <div data-controltype="textblock" class="global_text">
+              <p>
+                  Thank you for using the Train Headcount app.
+              </p>
+              <p>
+                  The information submitted using this system can be very useful in making
+                  sure we are providing the best possible service for your customers.
+              </p>
+              <p>
+                  Please use the menu button in the top left to control the system, or use
+                  the help button at the top right to see the help files.
+              </p>
+          </div>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Journey Info" data-theme="b"
+  id="journey_info" class="global_page">
+      <div data-role="panel" id="panel2" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  Train Headcount App
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Main Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Home
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Journey
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Count
+                  </a>
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Advanced Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Settings
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Advanced Settings
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
+          <a id="help_journey" data-role="button" data-transition="none" href="#help_journey"
+          data-icon="info" data-iconpos="left" class="ui-btn-right global_button">
+              Help
+          </a>
+          <a id="back_journey" data-role="button" data-transition="none" href="#home"
+          data-icon="back" data-iconpos="left" class="ui-btn-left global_button">
+              Back
+          </a>
+          <h3 class="global_header">
+              Journey Info
+          </h3>
+      </div>
+      <div data-role="content" style="padding: 1%">
+          <form id="journeyInfo" action="" class="global_form">
+              <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
+                  <label for="headcode">
+                      Headcode
+                  </label>
+                  <input name="headcode" id="headcode" placeholder="eg. X1CC" value="" type="text"
+                  data-mini="true">
+              </div>
+              <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
+                  <label for="dept_station">
+                      Dept Station
+                  </label>
+                  <input name="" id="dept_station" placeholder="CRS code eg. PNZ" value=""
+                  type="text" data-mini="true">
+              </div>
+              <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
+                  <label for="dept_time">
+                      Dept Time
+                  </label>
+                  <input name="Dept Time" id="dept_time" placeholder="" value="" type="time"
+                  data-mini="true">
+              </div>
+              <a id="crs_lookup" data-role="button" data-transition="none" data-theme="b"
+              href="#crs_lookup" data-icon="search" data-iconpos="left" class="global_button">
+                  CRS Lookup
+              </a>
+              <input id="store_journey" type="submit" data-theme="b" data-icon="plus"
+              data-iconpos="left" value="Store Journey" class="global_button">
+          </form>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Count Info" data-theme="b" id="count_info"
+  class="global_page">
+      <div data-role="panel" id="panel4" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  Train Headcount App
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Main Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Home
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Journey
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Count
+                  </a>
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Advanced Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Settings
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Advanced Settings
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-theme="b" data-role="header" data-position="fixed">
+          <a id="help_count" data-role="button" data-transition="none" href="#help_count"
+          data-icon="info" data-iconpos="left" class="ui-btn-right global_button">
+              Help
+          </a>
+          <a id="back_count" data-role="button" data-transition="none" href="#home"
+          data-icon="back" data-iconpos="left" class="ui-btn-left global_button">
+              Back
+          </a>
+          <h3 class="global_header">
+              Count Info
+          </h3>
+      </div>
+      <div data-role="content" style="padding: 1%">
+          <form id="countinfo" action="" class="global_form">
+              <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
+                  <label for="count_point">
+                      Count Point
+                  </label>
+                  <input name="" id="count_point" placeholder="CRS Code eg. SWI" value=""
+                  type="text" data-mini="true">
+              </div>
+              <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
+                  <label for="first_class">
+                      First Class
+                  </label>
+                  <input name="" id="first_class" placeholder="" value="" type="number">
+              </div>
+              <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
+                  <label for="standard_class">
+                      Standard Class
+                  </label>
+                  <input name="" id="standard_class" placeholder="" value="" type="number">
+              </div>
+              <input id="store_count" type="submit" data-theme="b" data-icon="plus"
+              data-iconpos="left" value="Submit Count" class="global_button">
+          </form>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Count Submitted" data-theme="b"
+  id="count_submitted" class="global_page">
+      <div data-role="panel" id="panel5" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  Train Headcount App
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Main Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Home
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Journey
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Count
+                  </a>
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Advanced Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Settings
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Advanced Settings
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
+          <a id="home_thanks" data-role="button" data-transition="none" data-theme="b"
+          href="#home" data-icon="home" data-iconpos="left" class="ui-btn-right global_button">
+              Home
+          </a>
+          <a id="back_thanks" data-role="button" data-transition="none" href="#home"
+          data-icon="back" data-iconpos="left" class="ui-btn-left global_button">
+              Back
+          </a>
+          <h3 class="global_header">
+              Count Sent
+          </h3>
+      </div>
+      <div data-role="content" style="padding: 1%">
+          <div data-controltype="textblock" class="global_text">
+              <p>
+                  <strong>
+                      Thank you
+                  </strong>
+              </p>
+              <p>
+                  Your count has been submitted to the database.
+              </p>
+              <p>
+                  Would you like to make another count on this journey, or clear the system
+                  ready for a new journey?
+              </p>
+          </div>
+          <a id="new_count" data-role="button" data-inline="true" data-transition="none"
+          data-theme="b" href="#count_info" class="global_button">
+              New Count
+          </a>
+          <a id="new_journey" data-role="button" data-inline="true" data-transition="none"
+          data-theme="b" href="#journey_info" class="global_button">
+              New Journey
+          </a>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="CRS Lookup" data-theme="b" id="crs_lookup"
+  class="global_page">
+      <div data-role="panel" id="panel6" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  Train Headcount App
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Main Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Home
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Journey
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Count
+                  </a>
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Advanced Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Settings
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Advanced Settings
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
+          <a id="update_data" data-role="button" data-transition="none" href="#"
+          data-icon="gear" data-iconpos="left" class="ui-btn-left global_button">
+              Update
+          </a>
+          <a id="help_crs_btn" data-role="button" data-transition="none" href="#help_crs"
+          data-icon="info" data-iconpos="left" class="ui-btn-right global_button">
+              Help
+          </a>
+          <h3 class="global_header">
+              CRS Lookup
+          </h3>
+      </div>
+      <div data-role="content" style="padding: 1%">
+          <div data-controltype="textblock" class="global_text">
+              <p>
+                  Last data refresh was #refresh_date#
+              </p>
+              <p>
+                  <br>
+              </p>
+          </div>
+          <a id="back_journey_btn" data-role="button" data-transition="none" data-theme="b"
+          href="#journey_info" data-icon="arrow-l" data-iconpos="left" class="global_button">
+              Back to Journey
+          </a>
+          <a id="back_count_btn" data-role="button" data-transition="none" data-theme="b"
+          href="#count_info" data-icon="arrow-l" data-iconpos="left" class="global_button">
+              Back to Count
+          </a>
+          <form id="search_crs_form" action="">
+              <div data-role="fieldcontain" data-controltype="searchinput" class="global_search_input">
+                  <label for="station_lookup">
+                      Station Lookup
+                  </label>
+                  <input name="Station Lookup" id="station_lookup" placeholder="(Partial) station name"
+                  value="" type="search">
+              </div>
+              <div id="crsResults" data-controltype="textblock" class="global_text">
+                  <p>
+                      results
+                  </p>
+              </div>
+          </form>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Help Index" data-theme="b" id="help_index"
+  class="global_page">
+      <div data-role="panel" id="panel7" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  Train Headcount App
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Main Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Home
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Journey
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Count
+                  </a>
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Advanced Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Settings
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Advanced Settings
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
+          <a id="help_home" data-role="button" data-transition="none" href="#home"
+          data-icon="home" data-iconpos="left" class="ui-btn-left global_button">
+              Home
+          </a>
+          <h3 class="global_header">
+              Help Index
+          </h3>
+      </div>
+      <div data-role="content" style="padding: 1%">
+          <div data-controltype="textblock" class="global_text">
+              <h3 data-mce-style="text-align: center;" style="text-align: center;">
+                  <b>
+                      Train Headcount App
+                      <br>
+                  </b>
+                  <b style="font-size: 1.17em;">
+                      v2.0.0
+                  </b>
+              </h3>
+          </div>
+          <ul data-role="listview" data-divider-theme="b" data-inset="true" class="global_text">
+              <li data-role="list-divider" role="heading">
+                  Help Pages
+              </li>
+              <li data-theme="c">
+                  <a href="#help_general" data-transition="none">
+                      General
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#help_settings" data-transition="none">
+                      Settings
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#help_adv_settings" data-transition="none">
+                      Advanced Settings
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#home" data-transition="none">
+                      Journey Info
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#help_count" data-transition="none">
+                      Count Info
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#help_crs" data-transition="none">
+                      CRS Lookup
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Help - General" data-theme="b"
+  id="help_general" class="global_page">
+      <div data-role="panel" id="panel14" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  Train Headcount App
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Main Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Home
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Journey
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Count
+                  </a>
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Advanced Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Settings
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Advanced Settings
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
+          <a id="help_home" data-role="button" data-transition="none" href="#home"
+          data-icon="home" data-iconpos="left" class="ui-btn-right global_button">
+              Home
+          </a>
+          <h3 class="global_header">
+              General
+          </h3>
+          <a id="help_back" data-role="button" data-transition="none" href="#help_index"
+          data-icon="arrow-l" data-iconpos="left" class="ui-btn-left global_button">
+              Index
+          </a>
+      </div>
+      <div data-role="content" style="padding: 1%">
+          <div data-controltype="textblock" class="global_text">
+              <h3 data-mce-style="text-align: center;" style="text-align: center;">
+                  General Help
+              </h3>
+          </div>
+          <div data-controltype="textblock" class="global_text">
+              <p>
+                  <b>
+                      <br>
+                  </b>
+                  - Use the buttons at the top to navigate through the screens.
+              </p>
+              <p>
+                  - Make sure to enter your personal information before submitting headcounts
+              </p>
+              <p>
+                  - Please use CRS codes for station names
+              </p>
+          </div>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Help - Settings" data-theme="b"
+  id="help_settings" class="global_page">
+      <div data-role="panel" id="panel15" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  Train Headcount App
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Main Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Home
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Journey
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Count
+                  </a>
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Advanced Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Settings
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Advanced Settings
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
+          <a data-role="button" data-transition="none" href="#home" data-icon="home"
+          data-iconpos="left" class="ui-btn-right global_button">
+              Home
+          </a>
+          <h3 class="global_header">
+              Settings
+          </h3>
+          <a data-role="button" data-transition="none" href="#help_index" data-icon="arrow-l"
+          data-iconpos="left" class="ui-btn-left global_button">
+              Index
+          </a>
+      </div>
+      <div data-role="content" style="padding: 1%">
+          <div data-controltype="textblock" class="global_text">
+              <h3 data-mce-style="text-align: center;" style="text-align: center;">
+                  Settings
+              </h3>
+          </div>
+          <div data-controltype="textblock" class="global_text">
+              <p>
+                  <b>
+                      <br>
+                  </b>
+                  Your operator ID, name and other information are submitted with your counts.
+              </p>
+              <p>
+                  They form a unique ID against the data to help check for errors, such
+                  as duplicate sends.
+              </p>
+              <p>
+                  Once stored, this data will survive between reboots and applications closures.
+                  It will however be erased if this application is reinstalled or removed.
+              </p>
+          </div>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Help - Advance Settings" data-theme="b"
+  id="help_adv_settings" class="global_page">
+      <div data-role="panel" id="panel16" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  Train Headcount App
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Main Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Home
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Journey
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Count
+                  </a>
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Advanced Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Settings
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Advanced Settings
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
+          <a data-role="button" data-transition="none" href="#home" data-icon="home"
+          data-iconpos="left" class="ui-btn-right global_button">
+              Home
+          </a>
+          <h3 class="global_header">
+              Adv.Settings
+          </h3>
+          <a data-role="button" data-transition="none" href="#help_index" data-icon="arrow-l"
+          data-iconpos="left" class="ui-btn-left global_button">
+              Index
+          </a>
+      </div>
+      <div data-role="content" style="padding: 1%">
+          <div data-controltype="textblock" class="global_text">
+              <h3 data-mce-style="text-align: center;" style="text-align: center;">
+                  Advanced Settings
+              </h3>
+          </div>
+          <div data-controltype="textblock" class="global_text">
+              <p>
+                  <b>
+                      <br>
+                  </b>
+                  This section should only be changed when advised by your IT team. It contains
+                  information about where to post your count data, and where to obtain CRS
+                  downloads from.
+              </p>
+              <p>
+                  This data should have default settings when the application is first installed.
+              </p>
+          </div>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Help - Journey Info" data-theme="b"
+  id="help_journey" class="global_page">
+      <div data-role="panel" id="panel17" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  Train Headcount App
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Main Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Home
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Journey
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Count
+                  </a>
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Advanced Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Settings
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Advanced Settings
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
+          <a data-role="button" data-transition="none" href="#home" data-icon="home"
+          data-iconpos="left" class="ui-btn-right global_button">
+              Home
+          </a>
+          <h3 class="global_header">
+              Journey
+          </h3>
+          <a data-role="button" data-transition="none" href="#help_index" data-icon="arrow-l"
+          data-iconpos="left" class="ui-btn-left global_button">
+              Index
+          </a>
+      </div>
+      <div data-role="content" style="padding: 1%">
+          <div data-controltype="textblock" class="global_text">
+              <h3 data-mce-style="text-align: center;" style="text-align: center;">
+                  Journey Info
+              </h3>
+          </div>
+          <div data-controltype="textblock" class="global_text">
+              <p>
+                  This information is entered at the start of your journey, and it is persistant
+                  until changed or you choose to end the journey after submitting a count.
+              </p>
+              <p>
+                  Thge headcode and departure time are considered to be essential info.
+              </p>
+              <p>
+                  However if you do not know the headcode (this will be known by the Train
+                  manager) the the departing station and time may be enough.
+              </p>
+          </div>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Help - Count Info" data-theme="b"
+  id="help_count" class="global_page">
+      <div data-role="panel" id="panel18" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  Train Headcount App
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Main Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Home
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Journey
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Count
+                  </a>
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Advanced Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Settings
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Advanced Settings
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
+          <a data-role="button" data-transition="none" href="#home" data-icon="home"
+          data-iconpos="left" class="ui-btn-right global_button">
+              Home
+          </a>
+          <h3 class="global_header">
+              Count
+          </h3>
+          <a data-role="button" data-transition="none" href="#help_index" data-icon="arrow-l"
+          data-iconpos="left" class="ui-btn-left global_button">
+              Index
+          </a>
+      </div>
+      <div data-role="content" style="padding: 1%">
+          <div data-controltype="textblock" class="global_text">
+              <h3 data-mce-style="text-align: center;" style="text-align: center;">
+                  Count Info
+              </h3>
+          </div>
+          <div data-controltype="textblock" class="global_text">
+              <p>
+                  You can only enter this information and submit it if you have entered
+                  Journey Information
+              </p>
+              <p>
+                  The count point is the Station you are at / have just left.
+              </p>
+              <p>
+                  Please use the CRS code of the station.
+              </p>
+          </div>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Help - CRS Lookup" data-theme="b"
+  id="help_crs" class="global_page">
+      <div data-role="panel" id="panel19" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  Train Headcount App
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Main Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Home
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Journey
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Count
+                  </a>
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Advanced Menu
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Settings
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#home" data-transition="none">
+                      Advanced Settings
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
+          <a data-role="button" data-transition="none" href="#home" data-icon="home"
+          data-iconpos="left" class="ui-btn-right global_button">
+              Home
+          </a>
+          <h3 class="global_header">
+              CRS
+          </h3>
+          <a data-role="button" data-transition="none" href="#help_index" data-icon="arrow-l"
+          data-iconpos="left" class="ui-btn-left global_button">
+              Index
+          </a>
+      </div>
+      <div data-role="content" style="padding: 1%">
+          <div data-controltype="textblock" class="global_text">
+              <h3 data-mce-style="text-align: center;" style="text-align: center;">
+                  Count Info
+              </h3>
+          </div>
+          <div data-controltype="textblock" class="global_text">
+              <p>
+                  This application stores CRS data so you can lookup the three letter code
+                  of the stations.
+              </p>
+              <p>
+                  These codes are standard throughout TOC's
+              </p>
+              <p>
+                  The list rarely changes, but it is best to reload the data after every
+                  2-4 weeks, or when you first use this application.
+              </p>
+              <p>
+                  Simply press the update button and wait till the date on the page changes
+                  to todays date.
+              </p>
+              <p>
+                  You can then go back to the count or journey page you were on, or just
+                  exit the application if you have no counts to submit.
+              </p>
+          </div>
+      </div>
+  </div>
+</body>
+</html>
