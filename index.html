@@ -40,12 +40,12 @@
                   Settings
               </li>
               <li data-theme="a">
-                  <a href="#journey_info" data-transition="none">
+                  <a href="#settings" data-transition="none">
                       Basic Settings
                   </a>
               </li>
               <li data-theme="a">
-                  <a href="#journey_info" data-transition="none">
+                  <a href="#page15" data-transition="none">
                       Advanced
                   </a>
               </li>
@@ -89,6 +89,136 @@
                   the help button at the top right to see the help files.
               </p>
           </div>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Settings" data-theme="b" id="settings"
+  class="global_page">
+      <div data-role="panel" id="panel20" data-position="left" data-display="reveal"
+      data-theme="b">
+          <ul data-role="listview" data-divider-theme="c" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  Main Options
+              </li>
+              <li data-theme="a">
+                  <a href="#journey_info" data-transition="none">
+                      Journey Info
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#count_info" data-transition="none">
+                      Add a Count
+                  </a>
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Settings
+              </li>
+              <li data-theme="a">
+                  <a href="#journey_info" data-transition="none">
+                      Basic Settings
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#journey_info" data-transition="none">
+                      Advanced
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
+          <a id="home_settings" data-role="button" data-transition="none" href="#home"
+          data-icon="home" data-iconpos="left" class="ui-btn-left global_button">
+              Home
+          </a>
+          <a data-role="button" data-transition="none" href="#help_settings" data-icon="info"
+          data-iconpos="left" class="ui-btn-right global_button">
+              Help
+          </a>
+          <h3 class="global_header">
+              Settings
+          </h3>
+      </div>
+      <div data-role="content" style="padding: 1%">
+          <div data-controltype="textblock" class="global_text">
+              <h3 style="text-align: center;" data-mce-style="text-align: center;">
+                  Settings
+              </h3>
+          </div>
+          <form id="postSettings" action="" class="global_form">
+              <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
+                  <label for="textinput10">
+                      Posting Server
+                  </label>
+                  <input name="Posting Server" id="textinput10" placeholder="http://railtracks.gwtrains.co.uk"
+                  value="http://railtracks.gwtrains.co.uk" type="text">
+              </div>
+              <input id="store_posting" type="submit" data-icon="plus" data-iconpos="left"
+              value="Store Information" class="global_button">
+          </form>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Adv Settings" data-theme="b"
+  id="page15" class="global_page">
+      <div data-role="panel" id="panel22" data-position="left" data-display="reveal"
+      data-theme="b">
+          <ul data-role="listview" data-divider-theme="c" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  Main Options
+              </li>
+              <li data-theme="a">
+                  <a href="#journey_info" data-transition="none">
+                      Journey Info
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#count_info" data-transition="none">
+                      Add a Count
+                  </a>
+              </li>
+              <li data-role="list-divider" role="heading">
+                  Settings
+              </li>
+              <li data-theme="a">
+                  <a href="#journey_info" data-transition="none">
+                      Basic Settings
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#journey_info" data-transition="none">
+                      Advanced
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
+          <a data-role="button" data-transition="none" href="#home" data-icon="home"
+          data-iconpos="left" class="ui-btn-left global_button">
+              Home
+          </a>
+          <a data-role="button" data-transition="none" href="#help_settings" data-icon="info"
+          data-iconpos="left" class="ui-btn-right global_button">
+              Help
+          </a>
+          <h3 class="global_header">
+              Settings
+          </h3>
+      </div>
+      <div data-role="content" style="padding: 1%">
+          <div data-controltype="textblock" class="global_text">
+              <h3 style="text-align: center;" data-mce-style="text-align: center;">
+                  Adv. Settings
+              </h3>
+          </div>
+          <form action="" class="global_form">
+              <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
+                  <label for="data_server">
+                      Data Server
+                  </label>
+                  <input name="Data Server" id="data_server" placeholder="http://dataserver.gwtrains.co.uk"
+                  value="http://dataserver.gwtrains.co.uk" type="text">
+              </div>
+              <input id="store_dataserver" type="submit" data-icon="plus" data-iconpos="left"
+              value="Store Information" class="global_button">
+          </form>
       </div>
   </div>
   <div data-role="page" data-control-title="Journey Info" data-theme="b"
