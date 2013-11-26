@@ -1,11 +1,17 @@
 <!-- Load the javascript function that loads current user data -->
-<script language="javascript">
+<script type="text/javascript" charset="utf-8">
 	/* Check if user variables have been entered */
 	if (!db_journey.getItem('headcode') && !db_journey.getItem('deptstat')) {
 		// variable is undefined so alert and force action
 		alert('Please enter journey details before logging headcounts');
 		changePage ('page_02.html?v=1')
 	}
+
+    jQuery(function($) {
+        $.mask.masks.crsmask = {mask: 'aaa'};
+        $('input[type="text"]').setMask();
+    });
+
 </script>
 <!-- end script -->
 
@@ -19,8 +25,8 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="label">Count-point</td>
-				<td> <input name="countpoint" size="10" type="text" id="countpoint" /> </td>
+				<td class="label">Count-point (CRS)</td>
+				<td> <input name="countpoint" size="10" type="text" maxlength="3" required="required" alt="crsmask" /> </td>
 			</tr>            
 			<tr>
 				<td class="label">Firstclass </td>
