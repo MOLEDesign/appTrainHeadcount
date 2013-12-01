@@ -6,7 +6,7 @@ $(document).ready(function(){
 /*	setOrientationListener(); */
 
 	/* Load the default page */
-	changePage ('page_01.html?v=1')
+	changePage ('index.html')
 	
 	
 	/* Check if user variables have been entered */
