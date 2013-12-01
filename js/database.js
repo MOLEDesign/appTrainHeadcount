@@ -2,6 +2,7 @@
 var element = function(id) { return document.getElementById(id); }
 var errorMessage = undefined;
 
+
 function getLocalStorage() {
     try {
         if( !! window.localStorage ) return window.localStorage;
@@ -10,6 +11,7 @@ function getLocalStorage() {
         return undefined;
     }
 }
+
 
 function getSessionStorage() {
     try {
@@ -20,71 +22,16 @@ function getSessionStorage() {
     }
 }
 
+
 function dispError( message ) {
     errorMessage = '<p class="error">' + message + '</p>';
     haveError = true;
 }
 
 
-function bwTable( wrap ) {
-    this.wrap = ( wrap == undefined ) ? true : wrap;    // default to true
-    this.rows = new Array();
-    this.header = [];
-
-    this.setHeader = function( row ) {
-        this.header = row;
-    }
-
-    this.addRow = function( row ) {
-        this.rows.push(row);
-    }
-
-    this.getRow = function ( index ) {
-        return this.rows[index];
-    }
-
-    this.countRows = function () {
-        return this.rows.length;
-    }
-
-    this.getTableHTML = function () {
-        var a = '';
-        if(this.wrap) a += '<table class="bwTable">\n';
-        a += this.getHeaderHTML();
-        for(var row in this.rows) {
-            a += this.getRowHTML(this.rows[row]);
-        }
-        if(this.wrap) a += '</table>\n';
-        return a;
-    }
-
-    this.getHeaderHTML = function () {
-        if( this.header.length == 0 ) return '';
-        var a = '<tr>';
-        for( var cell in this.header ) {
-            a += '<th>' + this.header[cell] + '</th>';
-        }
-        a += '</tr>\n';
-        return a;
-    }
-
-    this.getRowHTML = function (row ) {
-        var a = '<tr>';
-        for( var cell in row ) {
-            var v= row[cell];
-            if(v == null) v = '<span class="red">Please enter</span>';
-            a += '<td>' + v + '</td>';
-        }
-        a += '</tr>\n';
-        return a;
-    }
-
-    this.writeTable = function () {
-        document.write(this.getTableHTML());
-    }
-
-}
-
+// Setup base storage for variables
 var db_user = getLocalStorage() || dispError('Local Storage not supported.');
+var db_server = getLocalStorage() || dispError('Local Storage not supported.');
 var db_journey = getLocalStorage() || dispError('Local Storage not supported.');
 var db_count = getSessionStorage() || dispError('Session Storage not supported.');
+var db_crs = getLocalStorage() || dispError('Local Storage not supported.');

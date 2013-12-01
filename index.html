@@ -17,14 +17,43 @@
     <script src="js/codiqa.ext.js"></script>
     <script src="js/train-headcount.js"></script>
 
+    <!-- Script to Stop movement of page in IOS -->
+    <script>
+        function BlockMove(event) {
+            // Tell Safari not to move the window.
+            event.preventDefault() ;
+        }
+    </script>
+    <!-- end script -->
 
+    <!-- But add in scrolling where NEEDED -->
+    <script type="application/javascript" src="iscroll.js"></script>
+    <script type="text/javascript">
+        var myScroll;
+        function loaded() {
+            myScroll = new iScroll('global_page');
+        }
+        document.addEventListener('DOMContentLoaded', loaded, false);
+    </script>
+    <!-- End iscroll setup -->
+
+    <!-- Styling for smaller screens -->
+    <link type="text/css" href="css/smallscreen.css" rel="stylesheet" media="all and (max-height: 360px)" />
+
+
+    <!-- Fill placeholders for personal config -->
+    <script>
+        $(window).load(function () {
+            $("#fullname").attr("placeholder", db_user.getItem('fullname'));
+            $("#mobilenumber").attr("placeholder", db_user.getItem('mobilenumber'));
+            $("#email").attr("placeholder", db_user.getItem('email'));
+            $("#location").attr("placeholder", db_user.getItem('location'));
+            $("#server").attr("placeholder", db_server.getItem('server'));
+        });
+    </script>
 
 </head>
 <body>
-
-<!-- Script to Stop movement of page in IOS -->
-<script type=”text/javascript”>// <![CDATA[ function BlockMove(event) { event.preventDefault() ; } // ]]></script>
-<!-- end script -->
 
 <div data-role="page" data-control-title="Home" data-theme="b" id="home"
      class="global_page">
@@ -157,10 +186,10 @@
         </div>
         <form id="postSettings" action="" class="global_form">
             <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
-                <label for="textinput10">
+                <label for="postingserver">
                     Posting Server
                 </label>
-                <input name="Posting Server" id="textinput10" placeholder="http://railtracks.gwtrains.co.uk"
+                <input name="Posting Server" id="postingserver" placeholder="http://railtracks.gwtrains.co.uk"
                        value="http://railtracks.gwtrains.co.uk" type="text">
             </div>
             <input id="store_posting" type="submit" data-icon="plus" data-iconpos="left"
@@ -170,37 +199,6 @@
 </div>
 <div data-role="page" data-control-title="Adv Settings" data-theme="b"
      id="page15" class="global_page">
-    <div data-role="panel" id="panel22" data-position="left" data-display="reveal"
-         data-theme="b">
-        <ul data-role="listview" data-divider-theme="c" data-inset="false">
-            <li data-role="list-divider" role="heading">
-                Main Options
-            </li>
-            <li data-theme="a">
-                <a href="#journey_info" data-transition="none">
-                    Journey Info
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#count_info" data-transition="none">
-                    Add a Count
-                </a>
-            </li>
-            <li data-role="list-divider" role="heading">
-                Settings
-            </li>
-            <li data-theme="a">
-                <a href="#journey_info" data-transition="none">
-                    Basic Settings
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#journey_info" data-transition="none">
-                    Advanced
-                </a>
-            </li>
-        </ul>
-    </div>
     <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
         <a data-role="button" data-transition="none" href="#home" data-icon="home"
            data-iconpos="left" class="ui-btn-left global_button">
@@ -223,6 +221,14 @@
         </div>
         <form action="" class="global_form">
             <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
+                <label for="posting_server">
+                    Posting Server
+                </label>
+                <input name="Posting Server" id="posting_server" placeholder="http://railtracks.gwtrains.co.uk"
+                       value="http://railtracks.gwtrains.co.uk" type="text">
+            </div>
+
+            <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
                 <label for="data_server">
                     Data Server
                 </label>
@@ -236,45 +242,6 @@
 </div>
 <div data-role="page" data-control-title="Journey Info" data-theme="b"
      id="journey_info" class="global_page">
-    <div data-role="panel" id="panel2" data-position="left" data-display="reveal"
-         data-theme="a">
-        <ul data-role="listview" data-divider-theme="h" data-inset="false">
-            <li data-role="list-divider" role="heading">
-                Train Headcount App
-            </li>
-            <li data-role="list-divider" role="heading">
-                Main Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Home
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Journey
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Count
-                </a>
-            </li>
-            <li data-role="list-divider" role="heading">
-                Advanced Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Settings
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Advanced Settings
-                </a>
-            </li>
-        </ul>
-    </div>
     <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
         <a id="help_journey" data-role="button" data-transition="none" href="#help_journey"
            data-icon="info" data-iconpos="left" class="ui-btn-right global_button">
@@ -323,45 +290,6 @@
 </div>
 <div data-role="page" data-control-title="Count Info" data-theme="b" id="count_info"
      class="global_page">
-    <div data-role="panel" id="panel4" data-position="left" data-display="reveal"
-         data-theme="a">
-        <ul data-role="listview" data-divider-theme="h" data-inset="false">
-            <li data-role="list-divider" role="heading">
-                Train Headcount App
-            </li>
-            <li data-role="list-divider" role="heading">
-                Main Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Home
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Journey
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Count
-                </a>
-            </li>
-            <li data-role="list-divider" role="heading">
-                Advanced Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Settings
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Advanced Settings
-                </a>
-            </li>
-        </ul>
-    </div>
     <div data-theme="b" data-role="header" data-position="fixed">
         <a id="help_count" data-role="button" data-transition="none" href="#help_count"
            data-icon="info" data-iconpos="left" class="ui-btn-right global_button">
@@ -404,45 +332,6 @@
 </div>
 <div data-role="page" data-control-title="Count Submitted" data-theme="b"
      id="count_submitted" class="global_page">
-    <div data-role="panel" id="panel5" data-position="left" data-display="reveal"
-         data-theme="a">
-        <ul data-role="listview" data-divider-theme="h" data-inset="false">
-            <li data-role="list-divider" role="heading">
-                Train Headcount App
-            </li>
-            <li data-role="list-divider" role="heading">
-                Main Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Home
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Journey
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Count
-                </a>
-            </li>
-            <li data-role="list-divider" role="heading">
-                Advanced Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Settings
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Advanced Settings
-                </a>
-            </li>
-        </ul>
-    </div>
     <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
         <a id="home_thanks" data-role="button" data-transition="none" data-theme="b"
            href="#home" data-icon="home" data-iconpos="left" class="ui-btn-right global_button">
@@ -486,45 +375,6 @@
 </div>
 <div data-role="page" data-control-title="CRS Lookup" data-theme="b" id="crs_lookup"
      class="global_page">
-    <div data-role="panel" id="panel6" data-position="left" data-display="reveal"
-         data-theme="a">
-        <ul data-role="listview" data-divider-theme="h" data-inset="false">
-            <li data-role="list-divider" role="heading">
-                Train Headcount App
-            </li>
-            <li data-role="list-divider" role="heading">
-                Main Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Home
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Journey
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Count
-                </a>
-            </li>
-            <li data-role="list-divider" role="heading">
-                Advanced Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Settings
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Advanced Settings
-                </a>
-            </li>
-        </ul>
-    </div>
     <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
         <a id="update_data" data-role="button" data-transition="none" href="#"
            data-icon="gear" data-iconpos="left" class="ui-btn-left global_button">
@@ -576,45 +426,6 @@
 </div>
 <div data-role="page" data-control-title="Help Index" data-theme="b" id="help_index"
      class="global_page">
-    <div data-role="panel" id="panel7" data-position="left" data-display="reveal"
-         data-theme="a">
-        <ul data-role="listview" data-divider-theme="h" data-inset="false">
-            <li data-role="list-divider" role="heading">
-                Train Headcount App
-            </li>
-            <li data-role="list-divider" role="heading">
-                Main Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Home
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Journey
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Count
-                </a>
-            </li>
-            <li data-role="list-divider" role="heading">
-                Advanced Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Settings
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Advanced Settings
-                </a>
-            </li>
-        </ul>
-    </div>
     <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
         <a id="help_home" data-role="button" data-transition="none" href="#home"
            data-icon="home" data-iconpos="left" class="ui-btn-left global_button">
@@ -676,45 +487,6 @@
 </div>
 <div data-role="page" data-control-title="Help - General" data-theme="b"
      id="help_general" class="global_page">
-    <div data-role="panel" id="panel14" data-position="left" data-display="reveal"
-         data-theme="a">
-        <ul data-role="listview" data-divider-theme="h" data-inset="false">
-            <li data-role="list-divider" role="heading">
-                Train Headcount App
-            </li>
-            <li data-role="list-divider" role="heading">
-                Main Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Home
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Journey
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Count
-                </a>
-            </li>
-            <li data-role="list-divider" role="heading">
-                Advanced Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Settings
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Advanced Settings
-                </a>
-            </li>
-        </ul>
-    </div>
     <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
         <a id="help_home" data-role="button" data-transition="none" href="#home"
            data-icon="home" data-iconpos="left" class="ui-btn-right global_button">
@@ -755,45 +527,6 @@
 </div>
 <div data-role="page" data-control-title="Help - Settings" data-theme="b"
      id="help_settings" class="global_page">
-    <div data-role="panel" id="panel15" data-position="left" data-display="reveal"
-         data-theme="a">
-        <ul data-role="listview" data-divider-theme="h" data-inset="false">
-            <li data-role="list-divider" role="heading">
-                Train Headcount App
-            </li>
-            <li data-role="list-divider" role="heading">
-                Main Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Home
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Journey
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Count
-                </a>
-            </li>
-            <li data-role="list-divider" role="heading">
-                Advanced Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Settings
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Advanced Settings
-                </a>
-            </li>
-        </ul>
-    </div>
     <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
         <a data-role="button" data-transition="none" href="#home" data-icon="home"
            data-iconpos="left" class="ui-btn-right global_button">
@@ -836,45 +569,6 @@
 </div>
 <div data-role="page" data-control-title="Help - Advance Settings" data-theme="b"
      id="help_adv_settings" class="global_page">
-    <div data-role="panel" id="panel16" data-position="left" data-display="reveal"
-         data-theme="a">
-        <ul data-role="listview" data-divider-theme="h" data-inset="false">
-            <li data-role="list-divider" role="heading">
-                Train Headcount App
-            </li>
-            <li data-role="list-divider" role="heading">
-                Main Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Home
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Journey
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Count
-                </a>
-            </li>
-            <li data-role="list-divider" role="heading">
-                Advanced Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Settings
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Advanced Settings
-                </a>
-            </li>
-        </ul>
-    </div>
     <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
         <a data-role="button" data-transition="none" href="#home" data-icon="home"
            data-iconpos="left" class="ui-btn-right global_button">
@@ -913,45 +607,6 @@
 </div>
 <div data-role="page" data-control-title="Help - Journey Info" data-theme="b"
      id="help_journey" class="global_page">
-    <div data-role="panel" id="panel17" data-position="left" data-display="reveal"
-         data-theme="a">
-        <ul data-role="listview" data-divider-theme="h" data-inset="false">
-            <li data-role="list-divider" role="heading">
-                Train Headcount App
-            </li>
-            <li data-role="list-divider" role="heading">
-                Main Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Home
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Journey
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Count
-                </a>
-            </li>
-            <li data-role="list-divider" role="heading">
-                Advanced Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Settings
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Advanced Settings
-                </a>
-            </li>
-        </ul>
-    </div>
     <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
         <a data-role="button" data-transition="none" href="#home" data-icon="home"
            data-iconpos="left" class="ui-btn-right global_button">
@@ -991,45 +646,6 @@
 </div>
 <div data-role="page" data-control-title="Help - Count Info" data-theme="b"
      id="help_count" class="global_page">
-    <div data-role="panel" id="panel18" data-position="left" data-display="reveal"
-         data-theme="a">
-        <ul data-role="listview" data-divider-theme="h" data-inset="false">
-            <li data-role="list-divider" role="heading">
-                Train Headcount App
-            </li>
-            <li data-role="list-divider" role="heading">
-                Main Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Home
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Journey
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Count
-                </a>
-            </li>
-            <li data-role="list-divider" role="heading">
-                Advanced Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Settings
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Advanced Settings
-                </a>
-            </li>
-        </ul>
-    </div>
     <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
         <a data-role="button" data-transition="none" href="#home" data-icon="home"
            data-iconpos="left" class="ui-btn-right global_button">
@@ -1068,45 +684,6 @@
 </div>
 <div data-role="page" data-control-title="Help - CRS Lookup" data-theme="b"
      id="help_crs" class="global_page">
-    <div data-role="panel" id="panel19" data-position="left" data-display="reveal"
-         data-theme="a">
-        <ul data-role="listview" data-divider-theme="h" data-inset="false">
-            <li data-role="list-divider" role="heading">
-                Train Headcount App
-            </li>
-            <li data-role="list-divider" role="heading">
-                Main Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Home
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Journey
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Count
-                </a>
-            </li>
-            <li data-role="list-divider" role="heading">
-                Advanced Menu
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Settings
-                </a>
-            </li>
-            <li data-theme="a">
-                <a href="#home" data-transition="none">
-                    Advanced Settings
-                </a>
-            </li>
-        </ul>
-    </div>
     <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
         <a data-role="button" data-transition="none" href="#home" data-icon="home"
            data-iconpos="left" class="ui-btn-right global_button">
