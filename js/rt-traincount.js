@@ -58,10 +58,6 @@ function dbGoUser() {
 
     console.log('Saved!');
 
-    $("#full_name").attr("placeholder", db_user.getItem('full_name'));
-    $("#mobile_number").attr("placeholder", db_user.getItem('mobile_number'));
-    $("#email_address").attr("placeholder", db_user.getItem('email_address'));
-    $("#location").attr("placeholder", db_user.getItem('location'));
     $('#usersettings').each(function () {
         this.reset();
     });
@@ -73,6 +69,7 @@ function loadUserSettings() {
     $("#full_name").attr("value", db_user.full_name);
     $("#mobile_number").attr("value", db_user.mobile_number);
     $("#email_address").attr("value", db_user.email_address);
+    $("#depot").attr("value", db_user.depot);
 }
 
 function checkLoggedin() {
@@ -103,6 +100,7 @@ function dbClearUser() {
     db_user.setItem('full_name', '');
     db_user.setItem('mobile_number', '');
     db_user.setItem('email_address', '');
+    db_user.setItem('depot', '');
     alert('User signed out');
     loadPageFade('index.html');
 }
@@ -208,8 +206,8 @@ function stationLookUp() {
 
     stationList.initialize();
 
-    $('#departure .typeahead').typeahead(null, {
-        name: 'departure',
+    $('#dept_station .typeahead').typeahead(null, {
+        name: 'dept_station',
         displayKey: 'crs_code',
         valueKey: 'crs_code',
         source: stationList.ttAdapter(),
@@ -255,18 +253,18 @@ function stationLookUp() {
 }
 
 function depotLookUp() {
-    var stationList = new Bloodhound({
+    var depotList = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('depot_name'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         prefetch: 'data/depots.json'
     });
 
-    stationList.initialize();
+    depotList.initialize();
 
     $('#depot .typeahead').typeahead(null, {
         name: 'depot',
         displayKey: 'depot_name',
-        source: stationList.ttAdapter(),
+        source: depotList.ttAdapter(),
         templates: {
             empty: [
                 '<div class="empty-message">',
