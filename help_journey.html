@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="RT Announce">
+    <meta name="apple-mobile-web-app-title" content="RT Traincount">
 
     <link rel="apple-touch-icon" href="img/touch-icon-iphone.png">
 
@@ -22,7 +22,7 @@
     <script src="js/jquery-1.9.1.js"></script>
     <script src="js/jquery.mobile-1.3.1.js"></script>
     <script src="js/codiqa.ext.js"></script>
-    <script src="js/rt-announcements.js"></script>
+    <script src="js/rt-traincount.js"></script>
 
 </head>
 <body>
@@ -44,7 +44,7 @@
     <div data-role="content" style="padding: 1%">
         <div data-controltype="textblock" class="global_text">
             <h3 data-mce-style="text-align: center;" style="text-align: center;">
-                Announcement
+                Journey Info
             </h3>
         </div>
         <div data-controltype="textblock" class="global_text">
@@ -54,7 +54,7 @@
             </p>
 
             <p>
-                The headcode or journey info are considered to be essential info.
+                The headcode or departing station & time are considered to be essential info.
             </p>
 
             <p>
@@ -62,13 +62,8 @@
                 manager) please make sure to be as detailed with the journey information
                 as possible.
             </p>
-
             <p>
-                example
-            </p>
-
-            <p>
-                10:30 Paddington to Bristol TM
+                This information will surivie between reboots and application closures as some people make the same journey many time.
             </p>
         </div>
         <a id="journey_info_page" data-role="button" data-transition="fade" href="journey_info.html"

@@ -31,87 +31,45 @@
   <div data-role="page" data-control-title="Announcement" data-theme="b" id="announcement_info" class="global_page">
 
       <div data-theme="b" data-role="header" data-position="fixed">
-          <a id="help_count" data-role="button" onclick="loadPageFade('help_announce.html')" data-icon="info" data-iconpos="left" class="ui-btn-right global_button">
+          <a id="help_count" data-role="button" onclick="loadPageFade('help_misccount.html')" data-icon="info" data-iconpos="left" class="ui-btn-right global_button">
               Help
           </a>
           <a id="back_count" data-role="button" onclick="loadPageFade('index.html')" data-icon="home" data-iconpos="left" class="ui-btn-left global_button">
               Home
           </a>
           <h3 class="global_header">
-              Announcement
+              Misc Count
           </h3>
       </div>
       <div data-role="content" style="padding: 1%">
-          <form id="postAnnounce" action="" class="global_form">
+          <form id="postMisccount" action="" class="global_form">
               <div data-role="fieldcontain" data-controltype="textinput" id="location">
-                  <label for="location">
-                      Location
+                  <label for="count_point">
+                      Count Point
                   </label>
-                  <input class="typeahead" name="location" id="location" placeholder="" value="" type="text"/>
+                  <input class="typeahead" name="count_point" id="count_point" placeholder="" value="" type="text"/>
               </div>
-              <div data-role="fieldcontain" data-controltype="selectmenu" class="global_select_list">
-                  <label for="type">
-                      Announcer
+              <div data-role="fieldcontain" data-controltype="textinput">
+                  <label for="bikes_off">
+                      Bikes turned Away
                   </label>
-                  <select id="type" name="type">
-                      <option value="unknown">
-                          Unknown
-                      </option>
-                      <option value="guard">
-                          Guard
-                      </option>
-                      <option value="driver">
-                          Driver
-                      </option>
-                  </select>
+                  <input name="" id="bikes_off" placeholder="" value="" type="number">
               </div>
-              <div data-role="fieldcontain" data-controltype="toggleswitch" class="global_slider">
-                  <label for="announcement">
-                      If stopped due to disruption was there a suitable announcement?
+              <div data-role="fieldcontain" data-controltype="textinput">
+                  <label for="bikes_on">
+                      Bikes on Board
                   </label>
-                  <select name="announcement2" id="announcement" data-theme="" data-role="slider">
-                      <option value="1">
-                          Yes
-                      </option>
-                      <option value="0">
-                          No
-                      </option>
-                  </select>
+                  <input name="" id="bikes_on" placeholder="" value="" type="number">
               </div>
-              <div data-role="fieldcontain" data-controltype="toggleswitch" class="global_slider">
-                  <label for="underground">
-                      Was there an underground announcement?
+              <div data-role="fieldcontain" data-controltype="textinput">
+                  <label for="large_luggage">
+                      Large Luggage
                   </label>
-                  <select name="underground" id="underground" data-theme="" data-role="slider">
-                      <option value="1">
-                          Yes
-                      </option>
-                      <option value="0">
-                          No
-                      </option>
-                  </select>
+                  <input name="large_luggage" id="large_luggage" placeholder="" value=""
+                         type="text">
               </div>
-              <div data-role="fieldcontain" data-controltype="toggleswitch" class="global_slider">
-                  <label for="advise_of_arrival">
-                      Did driver / guard advise of arrival at destination?
-                  </label>
-                  <select name="advise_of_arrival" id="advise_of_arrival" data-theme="" data-role="slider">
-                      <option value="1">
-                          Yes
-                      </option>
-                      <option value="0">
-                          No
-                      </option>
-                  </select>
-              </div>
-              <div data-role="fieldcontain" data-controltype="textarea" class="global_text_area">
-                  <label for="comments">
-                      Comments
-                  </label>
-                  <textarea name="comments" id="comments" placeholder=""></textarea>
-              </div>
-              <input id="store_data" type="submit" data-icon="plus" data-iconpos="left" value="Submit Data" class="global_button" onclick="dbAnnounceGo()"/>
-              <input id="clear_data" type="submit" data-icon="minus" data-iconpos="left" value="Reset Form" class="global_button" onclick="dbClearAnnouncementGo()"/>
+              <input id="store_data" type="submit" data-icon="plus" data-iconpos="left" value="Submit Data" class="global_button" onclick="dbCountMiscGo()"/>
+              <input id="clear_data" type="submit" data-icon="minus" data-iconpos="left" value="Reset Form" class="global_button" onclick="dbClearMiscGo()"/>
 
           </form>
       </div>

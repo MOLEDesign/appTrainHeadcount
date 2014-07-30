@@ -124,7 +124,7 @@ function dbJourneyGo() {
     db_journey.setItem('dept_station', f.elements['dept_station'].value);
     db_journey.setItem('dept_time', f.elements['dept_time'].value);
     alert('Journey stored');
-    loadPageFade('announcement_info.html');
+    loadPageFade('index.html');
 }
 
 function dbClearJourneyGo() {

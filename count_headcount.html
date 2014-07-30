@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="RT Announce">
+    <meta name="apple-mobile-web-app-title" content="RT Train Count">
 
     <link rel="apple-touch-icon" href="img/touch-icon-iphone.png">
 
@@ -22,16 +22,16 @@
     <script src="js/jquery-1.9.1.js"></script>
     <script src="js/jquery.mobile-1.3.1.js"></script>
     <script src="js/codiqa.ext.js"></script>
-    <script src="js/rt-announcements.js"></script>
+    <script src="js/rt-traincount.js"></script>
     <script src="js/typeahead.bundle.js"></script>
     <script src="js/handlebars-v1.3.0.js"></script>
 
 </head>
 <body>
-  <div data-role="page" data-control-title="Announcement" data-theme="b" id="announcement_info" class="global_page">
+  <div data-role="page" data-control-title="Head Count" data-theme="b" id="announcement_info" class="global_page">
 
       <div data-theme="b" data-role="header" data-position="fixed">
-          <a id="help_count" data-role="button" onclick="loadPageFade('help_announce.html')" data-icon="info" data-iconpos="left" class="ui-btn-right global_button">
+          <a id="help_count" data-role="button" onclick="loadPageFade('help_headcount.html')" data-icon="info" data-iconpos="left" class="ui-btn-right global_button">
               Help
           </a>
           <a id="back_count" data-role="button" onclick="loadPageFade('index.html')" data-icon="home" data-iconpos="left" class="ui-btn-left global_button">
@@ -42,7 +42,7 @@
           </h3>
       </div>
       <div data-role="content" style="padding: 1%">
-          <form id="postAnnounce" action="" class="global_form">
+          <form id="postHeadcount" action="" class="global_form">
 
               <div data-role="fieldcontain" data-controltype="textinput" id="count_point">
                   <label for="countpoint">
@@ -73,7 +73,7 @@
 
 <script language="javascript">
     window.onload = checkLoggedInPage();
-    window.onload = stationLookUp()LookUp()
+    window.onload = stationLookUp();
     window.onload = fadeIn();
 </script>
 

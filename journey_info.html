@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="RT Announce">
+    <meta name="apple-mobile-web-app-title" content="RT Traincount">
 
     <link rel="apple-touch-icon" href="img/touch-icon-iphone.png">
 
@@ -22,7 +22,7 @@
     <script src="js/jquery-1.9.1.js"></script>
     <script src="js/jquery.mobile-1.3.1.js"></script>
     <script src="js/codiqa.ext.js"></script>
-    <script src="js/rt-announcements.js"></script>
+    <script src="js/rt-traincount.js"></script>
     <script src="js/typeahead.bundle.js"></script>
     <script src="js/handlebars-v1.3.0.js"></script>
 
@@ -41,7 +41,7 @@
           </h3>
       </div>
       <div data-role="content" style="padding: 1%">
-          <form id="journeyInfo" action="" class="global_form">
+          <form id="postJourney" action="" class="global_form">
               <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
                   <label for="headcode">
                       Headcode
@@ -110,7 +110,7 @@
                   <div class="ui-block-a">
                       <div data-role="fieldcontain" data-controltype="textinput" id="count_point">
                           <label for="dept_station">
-                              Countpoint
+                              Departing Station
                           </label>
                           <input class="typeahead" name="dept_station" id="dept_station" placeholder="" value="" type="text"/>
                       </div>
@@ -124,10 +124,14 @@
                                  data-mini="true">
                       </div>
                   </div>
+
+
               </div>
-              <input id="store_journey" type="submit" data-theme="b" data-icon="plus"
-                     data-iconpos="left" value="Store Journey" class="global_button" onclick="dbJourneyGo()">
-              <input id="clear_journey" type="submit" data-icon="minus" data-iconpos="left" value="Reset Form" class="global_button" onclick="dbClearJourneyGo()"/>
+
+                      <input id="store_journey" type="submit" data-theme="b" data-icon="plus"
+                             data-iconpos="left" value="Store Journey" class="global_button" onclick="dbJourneyGo()">
+                      <input id="clear_journey" type="submit" data-icon="minus" data-iconpos="left" value="Reset Form" class="global_button" onclick="dbClearJourneyGo()"/>
+
           </form>
       </div>
   </div>
@@ -136,7 +140,7 @@
 <script language="javascript">
 
     window.onload = checkLoggedInPage();
-    window.onload = stationLookUp()
+    window.onload = stationLookUp();
     window.onload = loadJourneySettings();
     window.onload = fadeIn();
 
