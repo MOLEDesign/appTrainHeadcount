@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Help - CRS Lookup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="RT Announce">
+
+    <link rel="apple-touch-icon" href="img/touch-icon-iphone.png">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/codiqa.ext.css" rel="stylesheet">
+    <link href="css/jqm-neue.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/jquery.mobile-1.3.1.js"></script>
+    <script src="js/codiqa.ext.js"></script>
+    <script src="js/rt-announcements.js"></script>
+
+</head>
+<body>
+<div data-role="page" data-control-title="Help - CRS Lookup" data-theme="b" id="help_crs" class="global_page">
+    <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
+        <a data-role="button" onclick="loadPageFade('index.html')" data-icon="home" data-iconpos="left"
+           class="ui-btn-right global_button">
+            Home
+        </a>
+
+        <h3 class="global_header">
+            CRS
+        </h3>
+        <a data-role="button" data-transition="fade" href="help_index.html" data-icon="arrow-l" data-iconpos="left"
+           class="ui-btn-left global_button">
+            Index
+        </a>
+    </div>
+    <div data-role="content" style="padding: 1%">
+        <div data-controltype="textblock" class="global_text">
+            <h3 data-mce-style="text-align: center;" style="text-align: center;">
+                CRS Data
+            </h3>
+        </div>
+        <div data-controltype="textblock" class="global_text">
+            <p>
+                This application stores CRS data so you can lookup the three letter code
+                of rail stations.
+            </p>
+
+            <p>
+                These codes are standard throughout TOC's
+            </p>
+
+            <p>
+                The list rarely changes, but it is best to reload the data after every
+                couple of months, or when you first use this application.
+            </p>
+
+            <p>
+                Simply press the update button and wait till the date on the page changes
+                to todays date.
+            </p>
+
+            <p>
+                You can then go back to the count or journey page you were on, or just
+                exit the application if you have no counts to submit.
+            </p>
+        </div>
+        <a id="crs_lookup_page" data-role="button" data-transition="fade" href="crs_lookup.html" class="global_button">
+            CRS Data Page
+        </a>
+        <a id="settings_page" data-role="button" onclick="loadPageFade('help_index.html')" class="global_button">
+            Help Index
+        </a>
+    </div>
+</div>
+</body>
+
+<script language="javascript">
+    window.onload = fadeIn();
+</script>
+
+</html>

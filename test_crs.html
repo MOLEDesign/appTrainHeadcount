@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>CRS Example</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/typeahead.bundle.js"></script>
+    <script type="text/javascript" src="js/handlebars-v1.3.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css">
+
+    <style type="text/css">
+        #stations .empty-message {
+            padding: 5px 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="stations">
+    <input class="typeahead" type="text" placeholder="Oscar winners for Best Picture">
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+    var stationList = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('station_name'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: 'data/stations.json'
+    });
+
+    stationList.initialize();
+
+    $('#stations .typeahead').typeahead(null, {
+        name: 'departure',
+        displayKey: 'station_name',
+        valueKey: 'crs_code',
+        source: stationList.ttAdapter(),
+        templates: {
+            empty: [
+                '<div class="empty-message">',
+                'Unable to find any FGW Stations that match the current query',
+                '</div>'
+            ].join('\n'),
+            suggestion: Handlebars.compile('<p><strong>{{station_name}}</strong> ({{crs_code}})</p>')
+        }
+    });
+
+</script>
+
+<script language="javascript">
+    window.onload = checkLoggedin();
+    window.onload = loadUserSettings();
+    window.onload = fadeIn();
+</script>
+</html>

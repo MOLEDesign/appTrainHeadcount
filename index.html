@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>RT Announcements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="RT Announce">
+
+    <link rel="apple-touch-icon" href="img/touch-icon-iphone.png">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/codiqa.ext.css" rel="stylesheet">
+    <link href="css/jqm-neue.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/jquery.mobile-1.3.1.js"></script>
+    <script src="js/codiqa.ext.js"></script>
+    <script src="js/rt-announcements.js"></script>
+
+</head>
+<body>
+<div data-role="page" data-control-title="Home" data-theme="b" id="home" class="global_page">
+    <div data-role="panel" id="panel13" data-position="left" data-display="reveal" data-theme="a">
+        <ul data-role="listview" data-divider-theme="c" data-inset="false">
+            <li class="user_signed_in" data-role="list-divider" role="heading">
+                Main Options
+            </li>
+            <li class="user_signed_in" data-theme="a">
+                <a onclick="loadPageFade('journey_info.html')">
+                    Journey Settings
+                </a>
+            </li>
+            <li class="user_signed_in" data-theme="a">
+                <a onclick="loadPageFade('announcement_info.html')">
+                    Send a Report
+                </a>
+            </li>
+            <li data-role="list-divider" role="heading">
+                App Settings
+            </li>
+            <li data-theme="a">
+                <a onclick="loadPageFade('crs_lookup.html')">
+                    Test CRS Data
+                </a>
+            </li>
+            <li data-theme="a">
+                <a onclick="loadPageFade('settings.html')">
+                    My Settings
+                </a>
+            </li>
+            <li data-theme="a">
+                <a onclick="loadPageFade('adv_settings.html')">
+                    Advanced Settings
+                </a>
+            </li>
+            <li data-role="list-divider" role="heading">
+                Information
+            </li>
+            <li data-theme="a">
+                <a onclick="loadPageFade('help_index.html')">
+                    Help Index
+                </a>
+            </li>
+            <li data-theme="a">
+                <a onclick="loadPageFade('about.html')">
+                    About this App
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <div data-theme="b" data-role="header" data-position="fixed" class="global_topbar">
+        <a id="help_home" data-role="button" onclick="loadPageFade('help_index.html')" data-icon="info"
+           data-iconpos="left" class="ui-btn-right global_button">
+            Help
+        </a>
+        <a id="menu_panel" data-controltype="panelbutton" data-role="button" href="#panel13" data-icon="grid"
+           data-iconpos="left" class="ui-btn-left global_button">
+            Settings
+        </a>
+
+        <h3 id="home_header" class="global_header">
+            Welcome
+        </h3>
+    </div>
+    <div data-role="content" style="padding: 1%">
+
+        <div id="home_header" data-controltype="textblock" class="global_text">
+            <h3 style="text-align: center;" data-mce-style="text-align: center;">
+                <b>
+                    <img style="width: 48px; height: 48px" src="img/icon-48-rtannounce.png"/>RT Announcements
+                </b>
+            </h3>
+        </div>
+        <div class="user_signed_in" data-controltype="textblock">
+            <p style="text-align: center;">
+
+            <div id="signed_in_message">
+            </div>
+            </p>
+        </div>
+        <div class="user_not_signed_in" data-controltype="textblock">
+            <p style="text-align: center;">
+                <b>
+                    Not signed in, please click My Settings and sign in 
+                </b>
+            </p>
+        </div>
+        <div id="home_text" data-controltype="textblock" class="global_text">
+            <p>
+                The information submitted using this system can be very useful in making
+                sure we are providing the best possible service for our customers.
+            </p>
+        </div>
+        <div data-controltype="htmlblock">
+            <p>
+                Use the menu button or the buttons in the top left to get started
+            </p>
+        </div>
+        <div class="user_not_signed_in">
+            <a id="home_my_settings" data-role="button" onclick="loadPageFade('settings.html')" data-icon="edit"
+               data-iconpos="left" class="global_button">
+                My Settings
+            </a>
+        </div>
+        <div class="user_signed_in">
+            <a id="home_new_journey" data-role="button" onclick="loadPageFade('journey_info.html')" data-icon="plus"
+               data-iconpos="left" class="global_button">
+                Journey Settings
+            </a>
+            <a id="home_new_report" data-role="button" onclick="loadPageFade('announcement_info.html')"
+               data-icon="plus" data-iconpos="left" class="global_button">
+                Send a Report
+            </a>
+        </div>
+        <a id="settings_page" data-role="button" onclick="loadPageFade('help_index.html')" data-icon="info" class="global_button">
+            Help Index
+        </a>
+    </div>
+</div>
+</body>
+
+<script language="javascript">
+    window.onload = checkLoggedin();
+    window.onload = loadUserSettings();
+    window.onload = fadeIn();
+</script>
+
+</html>

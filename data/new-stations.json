@@ -1,0 +1,10 @@
+[
+  {
+    "crs_code":"aml",
+    "station_name":"Acton Main Line"
+  },
+  {
+    "crs_code":"amt",
+    "station_name":"Aldermaston"
+  }
+]

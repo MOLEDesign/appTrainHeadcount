@@ -1,0 +1,278 @@
+crs_code,station_name
+aml,Acton Main Line
+amt,Aldermaston
+apf,Appleford
+auw,Ascott-Under-Wychwood
+ash,Ash
+asc,Ashchurch For Tewkesbury
+avf,Avoncliff
+avn,Avonmouth
+ban,Banbury
+baa,Barnham
+bnp,Barnstaple
+bsk,Basingstoke
+bth,Bath Spa
+bmt,Bedminster
+bdw,Bedwyn
+bas,Bere Alston
+bfe,Bere Ferrers
+bto,Betchworth
+bit,Bicester Town
+bte,Bitterne
+baw,Blackwater
+bod,Bodmin Parkway
+boe,Botley
+bne,Bourne End
+boa,Bradford-On-Avon
+bmy,Bramley Hants
+bgn,Bridgend
+bwt,Bridgwater
+btn,Brighton
+bpw,Bristol Parkway
+bri,Bristol Temple Meads
+bru,Bruton
+bgl,Bugle
+bnm,Burnham
+csk,Calstock
+cdu,Cam & Dursley
+cbn,Camborne
+cbb,Carbis Bay
+cdf,Cardiff Central
+cmn,Carmarthen
+cbp,Castle Bar Park
+clc,Castle Cary
+cau,Causeland
+cpn,Chapelton
+cby,Charlbury
+cnm,Cheltenham Spa
+cno,Chetnole
+cch,Chichester
+chl,Chilworth
+cpm,Chippenham
+cho,Cholsey
+cfn,Clifton Down
+cwl,Colwall
+cme,Combe
+coo,Cookham
+coe,Coombe Cornwall
+cop,Copplestone
+csa,Cosham
+cdi,Crediton
+crn,Crowthorne
+cum,Culham
+dwl,Dawlish
+dww,Dawlish Warren
+den,Dean
+dpt,Devonport
+did,Didcot Parkway
+dig,Digby & Sowton
+dmh,Dilton Marsh
+doc,Dockyard
+dcw,Dorchester West
+dpd,Dorking Deepdene
+dkt,Dorking West
+drg,Drayton Green
+eal,Ealing Broadway
+esl,Eastleigh
+egg,Eggesford
+eve,Evesham
+exc,Exeter Central
+exd,Exeter St Davids
+ext,Exeter St Thomas
+exm,Exmouth
+exn,Exton
+fal,Falmouth Docks
+fmt,Falmouth Town
+frm,Fareham
+fnn,Farnborough North
+fys,Ferryside
+fit,Filton Abbey Wood
+fin,Finstock
+ftn,Fratton
+ffd,Freshford
+fro,Frome
+fzp,Furze Platt
+gtw,Gatwick Airport
+gcr,Gloucester
+gom,Gomshall
+gor,Goring & Streatley
+gmv,Great Malvern
+gfd,Greenford
+gld,Guildford
+gsl,Gunnislake
+hme,Hamble
+han,Hanwell
+hav,Havant
+hay,Hayes & Harlington
+hyl,Hayle
+haf,Heathrow Terminal 4
+hxx,Heathrow Terminals 1-2-3
+hde,Hedge End
+hot,Henley-On-Thames
+hfd,Hereford
+hyd,Heyford
+hig,Highbridge & Burnham
+hyb,Honeybourne
+hov,Hove
+hgd,Hungerford
+isp,Islip
+ivr,Iver
+ivy,Ivybridge
+kem,Kemble
+key,Keyham
+kyn,Keynsham
+kwl,Kidwelly
+kgm,Kingham
+kgn,Kings Nympton
+</a>kgs,Kings Sutton
+kit,Kintbury
+lny,Langley
+lap,Lapford
+lwh,Lawrence Hill
+led,Ledbury
+lel,Lelant
+lts,Lelant Saltings
+lsk,Liskeard
+lle,Llanelli
+pad,London Paddington
+loo,Looe
+los,Lostwithiel
+lux,Luxulyan
+lyc,Lympstone Commando
+lym,Lympstone Village
+mdn,Maiden Newton
+mai,Maidenhead
+mvl,Malvern Link
+mlw,Marlow
+mkm,Melksham
+men,Menheniot
+mdg,Midgham
+mtp,Montpelier
+mrd,Morchard Road
+mim,Moreton-In-Marsh
+mor,Mortimer
+dbg,Mottisfont & Dunbridge
+nls,ailsea & Backwell
+nth,Neath
+ntl,Netley
+nby,Newbury
+nrc,Newbury Racecourse
+nwp,Newport South Wales
+nqy,Newquay
+nta,Newton Abbot
+ntc,Newton St Cyres
+ncm,North Camp
+olf,Oldfield Park
+oxf,Oxford
+pad,Paddington
+pgn,Paignton
+pan,Pangbourne
+par,Par
+psn,Parson Street
+pwy,Patchway
+pby,Pembrey & Burry Port
+pmb,Pembroke
+pmd,Pembroke Dock
+pnm,Penmere
+pyn,Penryn
+pnz,Penzance
+prw,Perranwell
+psh,Pershore
+pew,Pewsey
+pil,Pilning
+ply,Plymouth
+pol,Polsloe Bridge
+pta,Port Talbot Parkway
+ptc,Portchester
+pms,Portsmouth & Southsea
+pma,Portsmouth Arms
+pmh,Portsmouth Harbour
+qui,Quintrell Downs
+rad,Radley
+rdg,Reading
+rdw,Reading West
+rdh,Redhill
+rda,Redland
+red,Redruth
+rei,Reigate
+roc,Roche
+rom,Romsey
+sal,Salisbury
+sts,Saltash
+snd,Sandhurst
+sdp,Sandplace
+sdf,Saundersfoot
+sml,Sea Mills
+svb,Severn Beach
+stj,Severn Tunnel Jn
+sfr,Shalford
+shi,Shiplake
+sip,Shipton
+shh,Shirehampton
+sho,Sholing
+sse,Shoreham-By-Sea
+slo,Slough
+sgn,South Greenford
+stl,Southall
+soa,Southampton Airport Parkwy
+sou,Southampton Central
+sar,St Andrews Road
+sau,St Austell
+sbf,St Budeaux Ferry Road
+sbv,St Budeaux Victoria Road
+scr,St Columb Road
+sdn,St Denys
+ser,St Erth
+sgm,St Germans
+siv,St Ives
+sjp,St James' Park
+skn,St Keyne
+srd,Stapleton Road
+scs,Starcross
+shu,Stonehouse
+std,Stroud
+swa,Swansea
+snw,Swanwick
+swi,Swindon
+tac,Tackley
+tap,Taplow
+tau,Taunton
+tgm,Teignmouth
+ten,Tenby
+tha,Thatcham
+the,Theale
+tho,Thornford
+tlh,Tilehurst
+tvp,Tiverton Parkway
+top,Topsham
+tqy,Torquay
+trr,Torre
+tot,Totnes
+tro,Trowbridge
+tru,Truro
+twy,Twyford
+umb,Umberleigh
+upw,Upwey
+wan,Wanborough
+wgv,Wargrave
+wmn,Warminster
+wdt,West Drayton
+wea,West Ealing
+wsb,Westbury
+wnm,Weston Milton
+wsm,Weston-super-Mare
+wey,Weymouth
+wtl,Whitland
+wnc,Windsor & Eton Central
+wns,Winnersh
+wkm,Wokingham
+wls,Woolston
+wof,Worcester Foregate Street
+wos,Worcester Shrub Hill
+wor,Worle
+wrh,Worthing
+yae,Yate
+yat,Yatton
+yeo,Yeoford
+yvp,Yeovil Pen Mill
+yet,Yetminster
