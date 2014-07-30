@@ -69,7 +69,7 @@ function loadUserSettings() {
     $("#full_name").attr("value", db_user.full_name);
     $("#mobile_number").attr("value", db_user.mobile_number);
     $("#email_address").attr("value", db_user.email_address);
-    $("#depot").attr("value", db_user.depot);
+    $('#depot .typeahead').typeahead('val', db_user.getItem('depot'));
 }
 
 function checkLoggedin() {
@@ -109,27 +109,30 @@ function dbClearUser() {
 
 function loadJourneySettings() {
     $("#headcode").attr("value", db_journey.headcode);
-    $('#departure .typeahead').typeahead('val', db_journey.getItem('departure'));
-    $("#time").attr("value", db_journey.time);
-    $('#destination .typeahead').typeahead('val', db_journey.getItem('destination'));
+    $("#firstclass").attr("value", db_journey.firstclass);
+    $("#standard").attr("value", db_journey.standardclass);
+    $('#dept_station .typeahead').typeahead('val', db_journey.getItem('dept_station'));
+    $("#dept_time").attr("value", db_journey.dept_time);
 }
 
 function dbJourneyGo() {
     if (errorMessage) return;
     var f = element('postJourney');
     db_journey.setItem('headcode', f.elements['headcode'].value);
-    db_journey.setItem('departure', f.elements['departure'].value);
-    db_journey.setItem('time', f.elements['time'].value);
-    db_journey.setItem('destination', f.elements['destination'].value);
+    db_journey.setItem('firstclass', f.elements['firstclass'].value);
+    db_journey.setItem('standardclass', f.elements['standardclass'].value);
+    db_journey.setItem('dept_station', f.elements['dept_station'].value);
+    db_journey.setItem('dept_time', f.elements['dept_time'].value);
     alert('Journey stored');
     loadPageFade('announcement_info.html');
 }
 
 function dbClearJourneyGo() {
     db_journey.setItem('headcode', '');
-    db_journey.setItem('departure', '');
-    db_journey.setItem('time', '');
-    db_journey.setItem('destination', '');
+    db_journey.setItem('firstclass', '');
+    db_journey.setItem('standardclass', '');
+    db_journey.setItem('dept_station', '');
+    db_journey.setItem('dept_time', '');
     alert('Journey data cleared');
     loadPageFade('journey_info.html');
 }
@@ -221,21 +224,6 @@ function stationLookUp() {
         }
     });
 
-    $('#destination .typeahead').typeahead(null, {
-        name: 'destination',
-        displayKey: 'crs_code',
-        valueKey: 'crs_code',
-        source: stationList.ttAdapter(),
-        templates: {
-            empty: [
-                '<div class="empty-message">',
-                'Unable to find any FGW Stations that match the current query',
-                '</div>'
-            ].join('\n'),
-            suggestion: Handlebars.compile('<p><strong>{{station_name}}</strong> ({{crs_code}})</p>')
-        }
-    });
-
     $('#count_point .typeahead').typeahead(null, {
         name: 'count_point',
         displayKey: 'crs_code',
@@ -264,6 +252,7 @@ function depotLookUp() {
     $('#depot .typeahead').typeahead(null, {
         name: 'depot',
         displayKey: 'depot_name',
+        valueKey: 'depot_name',
         source: depotList.ttAdapter(),
         templates: {
             empty: [

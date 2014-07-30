@@ -52,10 +52,10 @@
               <div id="journey_grid" class="ui-grid-a global_grid">
                   <div class="ui-block-a">
                       <div data-role="fieldcontain" data-controltype="selectmenu" class="global_select">
-                          <label for="selectmenu2">
+                          <label for="firstclass">
                               1st Coaches
                           </label>
-                          <select id="selectmenu2" name="">
+                          <select id="firstclass" name="">
                               <option value="0">
                                   0
                               </option>
@@ -76,10 +76,10 @@
                   </div>
                   <div class="ui-block-b">
                       <div data-role="fieldcontain" data-controltype="selectmenu" class="global_select">
-                          <label for="selectmenu3">
+                          <label for="standardclass">
                               Standard Coaches
                           </label>
-                          <select id="selectmenu3" name="">
+                          <select id="standardclass" name="">
                               <option value="0">
                                   0
                               </option>
@@ -108,12 +108,11 @@
                       </div>
                   </div>
                   <div class="ui-block-a">
-                      <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
+                      <div data-role="fieldcontain" data-controltype="textinput" id="count_point">
                           <label for="dept_station">
-                              Dept Station
+                              Countpoint
                           </label>
-                          <input name="dept_station" id="dept_station" placeholder="CRS code eg. PNZ"
-                                 value="" type="text" data-mini="true">
+                          <input class="typeahead" name="dept_station" id="dept_station" placeholder="" value="" type="text"/>
                       </div>
                   </div>
                   <div class="ui-block-b">
