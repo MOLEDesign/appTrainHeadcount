@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Submit a Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="RT Announce">
+
+    <link rel="apple-touch-icon" href="img/touch-icon-iphone.png">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/codiqa.ext.css" rel="stylesheet">
+    <link href="css/jqm-neue.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/jquery.mobile-1.3.1.js"></script>
+    <script src="js/codiqa.ext.js"></script>
+    <script src="js/rt-announcements.js"></script>
+    <script src="js/typeahead.bundle.js"></script>
+    <script src="js/handlebars-v1.3.0.js"></script>
+
+</head>
+<body>
+  <div data-role="page" data-control-title="Announcement" data-theme="b" id="announcement_info" class="global_page">
+
+      <div data-theme="b" data-role="header" data-position="fixed">
+          <a id="help_count" data-role="button" onclick="loadPageFade('help_announce.html')" data-icon="info" data-iconpos="left" class="ui-btn-right global_button">
+              Help
+          </a>
+          <a id="back_count" data-role="button" onclick="loadPageFade('index.html')" data-icon="home" data-iconpos="left" class="ui-btn-left global_button">
+              Home
+          </a>
+          <h3 class="global_header">
+              Announcement
+          </h3>
+      </div>
+      <div data-role="content" style="padding: 1%">
+          <form id="postAnnounce" action="" class="global_form">
+
+              <div data-role="fieldcontain" data-controltype="textinput" id="count_point">
+                  <label for="countpoint">
+                      Countpoint
+                  </label>
+                  <input class="typeahead" name="count_point" id="count_point" placeholder="" value="" type="text"/>
+              </div>
+              <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
+                  <label for="first_class">
+                      First Class
+                  </label>
+                  <input name="" id="first_class" placeholder="" value="" type="number">
+              </div>
+              <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
+                  <label for="standard_class">
+                      Standard Class
+                  </label>
+                  <input name="" id="standard_class" placeholder="" value="" type="number">
+              </div>
+
+              <input id="store_data" type="submit" data-icon="plus" data-iconpos="left" value="Submit Data" class="global_button" onclick="dbHeadcountGo()"/>
+              <input id="clear_data" type="submit" data-icon="minus" data-iconpos="left" value="Reset Form" class="global_button" onclick="dbClearHeadcountGo()"/>
+
+          </form>
+      </div>
+  </div>
+</body>
+
+<script language="javascript">
+    window.onload = checkLoggedInPage();
+    window.onload = stationLookUp()
+    window.onload = fadeIn();
+</script>
+
+</html>

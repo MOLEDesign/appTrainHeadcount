@@ -24,11 +24,13 @@ function getSessionStorage() {
     }
 }
 
+
 // Setup base storage for variables
 var db_user = getLocalStorage() || dispError('Local Storage not supported.');
-var db_postserver = getLocalStorage() || dispError('Local Storage not supported.');
-var db_dataserver = getLocalStorage() || dispError('Local Storage not supported.');
+var db_server = getLocalStorage() || dispError('Local Storage not supported.');
 var db_journey = getLocalStorage() || dispError('Local Storage not supported.');
+var db_headcount = getSessionStorage() || dispError('Session Storage not supported.');
+var db_misccount = getSessionStorage() || dispError('Session Storage not supported.');
 var db_crs = getLocalStorage() || dispError('Local Storage not supported.');
 
 var db_announce = getSessionStorage() || dispError('Session Storage not supported.');
@@ -52,6 +54,7 @@ function dbGoUser() {
     db_user.setItem('full_name', f.elements['full_name'].value);
     db_user.setItem('mobile_number', f.elements['mobile_number'].value);
     db_user.setItem('email_address', f.elements['email_address'].value);
+    db_user.setItem('depot', f.elements['depot'].value);
 
     console.log('Saved!');
 
@@ -235,8 +238,8 @@ function stationLookUp() {
         }
     });
 
-    $('#location .typeahead').typeahead(null, {
-        name: 'location',
+    $('#count_point .typeahead').typeahead(null, {
+        name: 'count_point',
         displayKey: 'crs_code',
         valueKey: 'crs_code',
         source: stationList.ttAdapter(),
@@ -247,6 +250,30 @@ function stationLookUp() {
                 '</div>'
             ].join('\n'),
             suggestion: Handlebars.compile('<p><strong>{{station_name}}</strong> ({{crs_code}})</p>')
+        }
+    });
+}
+
+function depotLookUp() {
+    var stationList = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('depot_name'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: 'data/depots.json'
+    });
+
+    stationList.initialize();
+
+    $('#depot .typeahead').typeahead(null, {
+        name: 'depot',
+        displayKey: 'depot_name',
+        source: stationList.ttAdapter(),
+        templates: {
+            empty: [
+                '<div class="empty-message">',
+                'Unable to find any FGW Depots that match the current query',
+                '</div>'
+            ].join('\n'),
+            suggestion: Handlebars.compile('<p><strong>{{depot_name}}</strong></p>')
         }
     });
 }

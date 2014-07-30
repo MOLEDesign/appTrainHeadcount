@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="RT Announce">
+    <meta name="apple-mobile-web-app-title" content="RT Traincount">
 
     <link rel="apple-touch-icon" href="img/touch-icon-iphone.png">
 
@@ -22,7 +22,7 @@
     <script src="js/jquery-1.9.1.js"></script>
     <script src="js/jquery.mobile-1.3.1.js"></script>
     <script src="js/codiqa.ext.js"></script>
-    <script src="js/rt-announcements.js"></script>
+    <script src="js/rt-traincount.js"></script>
 
 </head>
 <body>
@@ -49,8 +49,11 @@
                   <br/>
               </p>
           </div>
-          <a id="new_report" data-role="button" data-theme="b" onclick="loadPageFade('announcement_info.html')" data-icon="plus" data-iconpos="left" class="global_button">
-              New Report
+          <a id="new_report" data-role="button" data-theme="b" onclick="loadPageFade('count_headcount.html')" data-icon="plus" data-iconpos="left" class="global_button">
+              New Headcount
+          </a>
+          <a id="new_report" data-role="button" data-theme="b" onclick="loadPageFade('count_misccount.html')" data-icon="plus" data-iconpos="left" class="global_button">
+              New Misc Count
           </a>
           <a id="new_journey" data-role="button" onclick="dbClearJourneyGo()" data-icon="plus" data-iconpos="left" class="global_button">
               New Journey

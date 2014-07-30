@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="RT Announce">
+    <meta name="apple-mobile-web-app-title" content="RT Traincount">
 
     <link rel="apple-touch-icon" href="img/touch-icon-iphone.png">
 
@@ -38,8 +38,13 @@
                 </a>
             </li>
             <li class="user_signed_in" data-theme="a">
-                <a onclick="loadPageFade('announcement_info.html')">
-                    Send a Report
+                <a onclick="loadPageFade('count_headcount.html')">
+                    Send a headcount
+                </a>
+            </li>
+            <li class="user_signed_in" data-theme="a">
+                <a onclick="loadPageFade('count_misc.html')">
+                    Send a mics count
                 </a>
             </li>
             <li data-role="list-divider" role="heading">
@@ -95,7 +100,7 @@
         <div id="home_header" data-controltype="textblock" class="global_text">
             <h3 style="text-align: center;" data-mce-style="text-align: center;">
                 <b>
-                    <img style="width: 48px; height: 48px" src="img/icon-48-rtannounce.png"/>RT Announcements
+                    <img style="width: 48px; height: 48px" src="img/icon-48-rtheadcount.png"/>RT Traincount
                 </b>
             </h3>
         </div>
@@ -135,9 +140,13 @@
                data-iconpos="left" class="global_button">
                 Journey Settings
             </a>
-            <a id="home_new_report" data-role="button" onclick="loadPageFade('announcement_info.html')"
+            <a id="home_new_report" data-role="button" onclick="loadPageFade('count_headcount.html')"
                data-icon="plus" data-iconpos="left" class="global_button">
-                Send a Report
+                Send a Headcount
+            </a>
+            <a id="home_new_report" data-role="button" onclick="loadPageFade('count_misccount.html')"
+               data-icon="plus" data-iconpos="left" class="global_button">
+                Send a misc count
             </a>
         </div>
         <a id="settings_page" data-role="button" onclick="loadPageFade('help_index.html')" data-icon="info" class="global_button">
