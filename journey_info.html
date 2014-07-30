@@ -41,39 +41,93 @@
           </h3>
       </div>
       <div data-role="content" style="padding: 1%">
-          <form id="postJourney" action="" class="global_form">
+          <form id="journeyInfo" action="" class="global_form">
               <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
                   <label for="headcode">
                       Headcode
                   </label>
-                  <input name="headcode" id="headcode" value="" type="text" data-mini="true"/>
+                  <input name="headcode" id="headcode" placeholder="eg. X1CC" value="" type="text"
+                         data-mini="true">
               </div>
-              <div data-controltype="textblock">
-                  <p>
-                      <b>
-                          or enter journey details
-                      </b>
-                  </p>
+              <div id="journey_grid" class="ui-grid-a global_grid">
+                  <div class="ui-block-a">
+                      <div data-role="fieldcontain" data-controltype="selectmenu" class="global_select">
+                          <label for="selectmenu2">
+                              1st Coaches
+                          </label>
+                          <select id="selectmenu2" name="">
+                              <option value="0">
+                                  0
+                              </option>
+                              <option value="1">
+                                  1
+                              </option>
+                              <option value="2">
+                                  2
+                              </option>
+                              <option value="3">
+                                  3
+                              </option>
+                              <option value="4">
+                                  4
+                              </option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="ui-block-b">
+                      <div data-role="fieldcontain" data-controltype="selectmenu" class="global_select">
+                          <label for="selectmenu3">
+                              Standard Coaches
+                          </label>
+                          <select id="selectmenu3" name="">
+                              <option value="0">
+                                  0
+                              </option>
+                              <option value="1">
+                                  1
+                              </option>
+                              <option value="2">
+                                  2
+                              </option>
+                              <option value="3">
+                                  3
+                              </option>
+                              <option value="4">
+                                  4
+                              </option>
+                              <option value="5">
+                                  5
+                              </option>
+                              <option value="6">
+                                  6
+                              </option>
+                              <option value="7">
+                                  6
+                              </option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="ui-block-a">
+                      <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
+                          <label for="dept_station">
+                              Dept Station
+                          </label>
+                          <input name="dept_station" id="dept_station" placeholder="CRS code eg. PNZ"
+                                 value="" type="text" data-mini="true">
+                      </div>
+                  </div>
+                  <div class="ui-block-b">
+                      <div data-role="fieldcontain" data-controltype="textinput" class="global_text_input">
+                          <label for="dept_time">
+                              Dept Time
+                          </label>
+                          <input name="dept_time" id="dept_time" placeholder="" value="" type="time"
+                                 data-mini="true">
+                      </div>
+                  </div>
               </div>
-              <div data-role="fieldcontain" data-controltype="textinput" id="departure">
-                  <label for="departure">
-                      Departure
-                  </label>
-                  <input class="typeahead" name="departure" id="departure" placeholder="" value="" type="text"/>
-              </div>
-              <div data-role="fieldcontain" data-controltype="textinput">
-                  <label for="time">
-                      Time
-                  </label>
-                  <input name="time" id="time" placeholder="" value="" type="time"/>
-              </div>
-              <div data-role="fieldcontain" data-controltype="textinput" id="destination">
-                  <label for="destination">
-                      Destination
-                  </label>
-                  <input class="typeahead" name="destination" id="destination" placeholder="" value="" type="text"/>
-              </div>
-              <input id="store_journey" type="submit" data-icon="plus" data-iconpos="left" value="Store Journey" class="global_button" onclick="dbJourneyGo() "/>
+              <input id="store_journey" type="submit" data-theme="b" data-icon="plus"
+                     data-iconpos="left" value="Store Journey" class="global_button" onclick="dbJourneyGo()">
               <input id="clear_journey" type="submit" data-icon="minus" data-iconpos="left" value="Reset Form" class="global_button" onclick="dbClearJourneyGo()"/>
           </form>
       </div>
