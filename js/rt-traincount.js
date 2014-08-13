@@ -109,8 +109,10 @@ function dbClearUser() {
 
 function loadJourneySettings() {
     $("#headcode").attr("value", db_journey.headcode);
-    $("#firstclass").attr("value", db_journey.firstclass);
-    $("#standard").attr("value", db_journey.standardclass);
+
+    $('#firstclass').val(db_journey.firstclass);
+
+    $('#standardclass').val(db_journey.standardclass);
     $('#dept_station .typeahead').typeahead('val', db_journey.getItem('dept_station'));
     $("#dept_time").attr("value", db_journey.dept_time);
 }
