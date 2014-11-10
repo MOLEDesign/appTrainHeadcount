@@ -119,7 +119,7 @@ function loadJourneySettings() {
 
 function dbJourneyGo() {
     if (errorMessage) return;
-    var f = element('postJourney');
+    var f = element('postHeadcount');
     db_journey.setItem('headcode', f.elements['headcode'].value);
     db_journey.setItem('firstclass', f.elements['firstclass'].value);
     db_journey.setItem('standardclass', f.elements['standardclass'].value);
