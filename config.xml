@@ -25,13 +25,13 @@
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap       = "http://phonegap.com/ns/1.0"
         xmlns:android   = "http://schemas.android.com/apk/res/android"
-        id              = "uk.co.gwtrains.rtheadcount"
-        version         = "1.1.1">
+        id              = "uk.co.gwtrains.rttraincount"
+        version         = "2.0.0">
 
-	<name>RT Defect Delay</name>
+	<name>RT Train Count</name>
 	
 	<description>
-		An application for reporting headcounts
+		An application for various train counts
 	</description>
 	
 	<author href="http://railtracks.fgw.co.uk" email="fgw-it@firstgroup.com">
