@@ -37,12 +37,14 @@ var db_announce = getSessionStorage() || dispError('Session Storage not supporte
 
 // General effects and page loaders
 function fadeIn() {
-    $("body").hide();
-    $("body").fadeIn(500);
+    $("body").show();
+    //$("body").fadeIn(500);
 }
 
 function loadPageFade(urlvar) {
-    $("body").fadeOut(500, function(){ window.location.href = urlvar; });
+    //$("body").fadeOut(500, function () {
+    window.location.href = urlvar;
+    //});
 }
 
 
