@@ -1,8 +1,11 @@
 [
   {
-    "depot_name":"Swindon"
+      "depot_name":"Swindon"
   },
   {
-    "depot_name":"Swansea"
+      "depot_name":"Swansea"
+  },
+  {
+      "depot_name":"Other"
   }
 ]
