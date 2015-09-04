@@ -1,11 +1,56 @@
 [
-  {
-      "depot_name":"Swindon"
-  },
-  {
-      "depot_name":"Swansea"
-  },
-  {
-      "depot_name":"Other"
-  }
+    {
+        "depot_name":"Bristol Bath Sp I"
+    },
+    {
+        "depot_name":"Bristol Bath Sp R"
+    },
+    {
+        "depot_name":"Cardiff Central Sp I"
+    },
+    {
+        "depot_name":"Exeter St D Sp I"
+    },
+    {
+        "depot_name":"Exeter St D Sp R"
+    },
+    {
+        "depot_name":"Fratton Psm Sp R"
+    },
+    {
+        "depot_name":"Gloucester Sp R"
+    },
+    {
+        "depot_name":"Paddington Sp I"
+    },
+    {
+        "depot_name":"Par Sp R"
+    },
+    {
+        "depot_name":"Penzance Sp I & R"
+    },
+    {
+        "depot_name":"Plymouth Sp I"
+    },
+    {
+        "depot_name":"Reading Sp N"
+    },
+    {
+        "depot_name":"Redhill Thames N"
+    },
+    {
+        "depot_name":"Swansea H S Sp I"
+    },
+    {
+        "depot_name":"Westbury Wi Sp R"
+    },
+    {
+        "depot_name":"Weymouth Sp R"
+    },
+    {
+        "depot_name":"Worcester S Sp N"
+    },
+    {
+        "depot_name":"Unknown"
+    }
 ]
