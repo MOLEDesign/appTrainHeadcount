@@ -759,7 +759,7 @@
             },
             dropdown: {
                 position: "absolute",
-                top: "100%",
+                bottom: "80px",
                 left: "0",
                 zIndex: "100",
                 display: "none"
