@@ -56,13 +56,13 @@ function dbGoUser() {
     db_user.setItem('full_name', f.elements['full_name'].value);
     db_user.setItem('mobile_number', f.elements['mobile_number'].value);
     db_user.setItem('email_address', f.elements['email_address'].value);
-    //db_user.setItem('usecrs', f.elements['usecrs'].value);
+    db_user.setItem('depot', f.elements['depot'].value);
 
 
     $("#full_name").attr("placeholder", db_user.getItem('full_name'));
     $("#mobile_number").attr("placeholder", db_user.getItem('mobile_number'));
     $("#email_address").attr("placeholder", db_user.getItem('email_address'));
-    //$("#usecrs").attr("placeholder", db_user.getItem('usecrs'));
+    $("#depot").val(db_user.getItem('depot'))
     alert('User information stored');
     loadPageFade('index.html');
 }
@@ -71,7 +71,7 @@ function loadUserSettings() {
     $("#full_name").attr("value", db_user.full_name);
     $("#mobile_number").attr("value", db_user.mobile_number);
     $("#email_address").attr("value", db_user.email_address);
-    $('#depot').attr("value", db_user.depot);
+    $("#depot .typeahead").typeahead('val', db_user.getItem('depot'));
 }
 
 function checkLoggedin() {
