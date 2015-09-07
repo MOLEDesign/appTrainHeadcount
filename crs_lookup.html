@@ -22,7 +22,7 @@
     <script src="js/jquery-1.9.1.js"></script>
     <script src="js/jquery.mobile-1.3.1.js"></script>
     <script src="js/codiqa.ext.js"></script>
-    <script src="js/rt-announcements.js"></script>
+    <script src="js/rt-traincount.js"></script>
     <script src="js/typeahead.bundle.js"></script>
     <script src="js/handlebars-v1.3.0.js"></script>
 
@@ -50,23 +50,17 @@
               </p>
           </div>
 
-          <div data-role="fieldcontain" data-controltype="textinput" id="departure">
-              <label for="departure">
-                  Departure
+          <div data-role="fieldcontain" data-controltype="textinput" id="dept_station">
+              <label for="dept_station">
+                  Departing Station
               </label>
-              <input class="typeahead" name="departure" id="departure" placeholder="" value="" type="text"/>
+              <input class="typeahead" name="dept_station" id="dept_station" placeholder="" value="" type="text"/>
           </div>
-          <div data-role="fieldcontain" data-controltype="textinput" id="destination">
-              <label for="destination">
-                  Destination
+          <div data-role="fieldcontain" data-controltype="textinput" id="count_point">
+              <label for="count_point">
+                  Countpoint
               </label>
-              <input class="typeahead" name="destination" id="destination" placeholder="" value="" type="text"/>
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput" id="location">
-              <label for="location">
-                  Count Location
-              </label>
-              <input class="typeahead" name="location" id="location" placeholder="" value="" type="text"/>
+              <input class="typeahead" name="count_point" id="count_point" placeholder="" value="" type="text"/>
           </div>
           <a id="back_journey_btn" data-role="button" onclick="loadPageFade('index.html')" data-icon="arrow-l" data-iconpos="left" class="global_button">
               Back to Home page
