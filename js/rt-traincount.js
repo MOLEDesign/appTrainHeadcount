@@ -37,18 +37,18 @@ var db_announce = getSessionStorage() || dispError('Session Storage not supporte
 
 // General effects and page loaders
 function fadeIn() {
-    $("body").show();
-    //$("body").fadeIn(500);
+    $("body").hide();
+    $("body").fadeIn(500);
 }
 
 function loadPageFade(urlvar) {
-    //$("body").fadeOut(500, function () {
-    window.location.href = urlvar;
-    //});
+    $("body").fadeOut(500, function(){ window.location.href = urlvar; });
 }
 
 
 // User functions
+
+
 
 function dbGoUser() {
     if (errorMessage) return;
@@ -56,13 +56,13 @@ function dbGoUser() {
     db_user.setItem('full_name', f.elements['full_name'].value);
     db_user.setItem('mobile_number', f.elements['mobile_number'].value);
     db_user.setItem('email_address', f.elements['email_address'].value);
-    db_user.setItem('depot', f.elements['depot'].value);
+    //db_user.setItem('usecrs', f.elements['usecrs'].value);
 
-    console.log('Saved!');
 
-    $('#usersettings').each(function () {
-        this.reset();
-    });
+    $("#full_name").attr("placeholder", db_user.getItem('full_name'));
+    $("#mobile_number").attr("placeholder", db_user.getItem('mobile_number'));
+    $("#email_address").attr("placeholder", db_user.getItem('email_address'));
+    //$("#usecrs").attr("placeholder", db_user.getItem('usecrs'));
     alert('User information stored');
     loadPageFade('index.html');
 }
