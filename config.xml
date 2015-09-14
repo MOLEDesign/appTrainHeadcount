@@ -26,7 +26,7 @@
         xmlns:gap       = "http://phonegap.com/ns/1.0"
         xmlns:android   = "http://schemas.android.com/apk/res/android"
         id              = "uk.co.gwtrains.rttraincount"
-        version         = "2.1.4">
+        version         = "2.1.5">
 
 	<name>RT Train Count</name>
 
