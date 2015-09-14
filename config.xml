@@ -31,6 +31,8 @@
 	<name>RT Train Count</name>
 
     <preference name="phonegap-version" value="3.7.0" />
+
+    <gap:plugin name="org.crosswalk.engine" version="1.3.0" />
 	
 	<description>
 		An application for various train counts
