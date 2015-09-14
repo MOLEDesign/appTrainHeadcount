@@ -111,8 +111,8 @@ function dbClearUser() {
 
 function loadJourneySettings() {
     $("#headcode").attr("value", db_journey.headcode);
-    $('#firstclass').val(db_journey.firstclass);
-    $('#standardclass').val(db_journey.standardclass);
+    $('#firstclasscar').val(db_journey.firstclasscar);
+    $('#standardclasscar').val(db_journey.standardclasscar);
     $('#dept_station .typeahead').typeahead('val', db_journey.getItem('dept_station'));
     $("#dept_time").attr("value", db_journey.dept_time);
 }
@@ -121,8 +121,8 @@ function dbJourneyGo() {
     if (errorMessage) return;
     var f = element('postJourney');
     db_journey.setItem('headcode', f.elements['headcode'].value);
-    db_journey.setItem('firstclass', f.elements['firstclass'].value);
-    db_journey.setItem('standardclass', f.elements['standardclass'].value);
+    db_journey.setItem('firstclasscar', f.elements['firstclasscar'].value);
+    db_journey.setItem('standardclasscar', f.elements['standardclasscar'].value);
     db_journey.setItem('dept_station', f.elements['dept_station'].value);
     db_journey.setItem('dept_time', f.elements['dept_time'].value);
     alert('Journey stored');
@@ -131,8 +131,8 @@ function dbJourneyGo() {
 
 function dbClearJourneyGo() {
     db_journey.setItem('headcode', '');
-    db_journey.setItem('firstclass', '');
-    db_journey.setItem('standardclass', '');
+    db_journey.setItem('firstclasscar', '');
+    db_journey.setItem('standardclasscar', '');
     db_journey.setItem('dept_station', '');
     db_journey.setItem('dept_time', '');
     alert('Journey data cleared');
