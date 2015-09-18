@@ -167,18 +167,20 @@ function dbHeadcountGo() {
     $('#loadingmessage').show();  // show the loading message.
     $.ajax({
         type: 'POST',
-        url: 'http://railtracks.gwtrains.co.uk/components/com_rttraincount/mobile/save_2_1_0.php',
+        url: 'http://railtracks.gwtrains.co.uk/components/com_rtheadcount/mobile/save_2_2_0.php',
         data: {
             count_point: db_headcount.getItem('count_point'),
             first_class: db_headcount.getItem('first_class'),
             standard_class: db_headcount.getItem('standard_class'),
             headcode: db_journey.getItem('headcode'),
-            time: db_journey.getItem('time'),
+            dept_time: db_journey.getItem('dept_time'),
+            dept_station: db_journey.getItem('dept_station'),
             firstclasscar: db_journey.getItem('firstclasscar'),
             standardclasscar: db_journey.getItem('standardclasscar'),
             full_name: db_user.getItem('full_name'),
             email_address: db_user.getItem('email_address'),
-            mobile_number: db_user.getItem('mobile_number')
+            mobile_number: db_user.getItem('mobile_number'),
+            mobile_number: db_user.getItem('depot')
         },
         //change the url for your project
         success: function (data) {
@@ -191,7 +193,7 @@ function dbHeadcountGo() {
 
         },
         error: function () {
-            alert('There was an error recording your hedcount. Please check signal strength and try again');
+            alert('There was an error recording your headcount. Please check signal strength and try again');
         }
     });
 
