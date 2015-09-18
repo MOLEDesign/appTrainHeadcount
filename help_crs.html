@@ -14,16 +14,17 @@
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Expires" content="0"/>
 
-    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/codiqa.ext.css" rel="stylesheet">
     <link href="css/jqm-neue.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+
+    <link href="css/codiqa.ext.css" rel="stylesheet">
+    <link href="css/jqm-neue.css" rel="stylesheet">
 
     <script src="js/jquery-1.9.1.js"></script>
     <script src="js/jquery.mobile-1.3.1.js"></script>
     <script src="js/codiqa.ext.js"></script>
-    <script src="js/rt-announcements.js"></script>
-
+    <script src="js/rt-traincount.js"></script>
 </head>
 <body>
 <div data-role="page" data-control-title="Help - CRS Lookup" data-theme="b" id="help_crs" class="global_page">
@@ -58,23 +59,13 @@
             </p>
 
             <p>
-                The list rarely changes, but it is best to reload the data after every
-                couple of months, or when you first use this application.
+                Start typing in the full name of the station and then click on it in the list
             </p>
 
-            <p>
-                Simply press the update button and wait till the date on the page changes
-                to todays date.
-            </p>
-
-            <p>
-                You can then go back to the count or journey page you were on, or just
-                exit the application if you have no counts to submit.
-            </p>
         </div>
-        <a id="crs_lookup_page" data-role="button" data-transition="fade" href="crs_lookup.html" class="global_button">
+        <!-- <a id="crs_lookup_page" data-role="button" data-transition="fade" href="crs_lookup.html" class="global_button">
             CRS Data Page
-        </a>
+        </a> -->
         <a id="settings_page" data-role="button" onclick="loadPageFade('help_index.html')" class="global_button">
             Help Index
         </a>
