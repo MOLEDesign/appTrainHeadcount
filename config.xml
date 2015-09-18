@@ -26,7 +26,7 @@
         xmlns:gap       = "http://phonegap.com/ns/1.0"
         xmlns:android   = "http://schemas.android.com/apk/res/android"
         id              = "uk.co.gwtrains.rttraincount"
-        version         = "2.1.5">
+        version         = "3.0.0">
 
 	<name>RT Train Count</name>
 
@@ -48,7 +48,7 @@
 	<!-- Expose access to all URIs, including the file and http protocols -->
     <access origin="*" subdomains="true" />
 	
-	<icon src="logo.png" />
+	<icon src="img/touch-icon-iphone.png" />
 
 	<content src="index.html" />
 	
