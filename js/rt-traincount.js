@@ -114,7 +114,7 @@ function loadJourneySettings() {
     $('#firstclasscar').val(db_journey.firstclasscar);
     $('#standardclasscar').val(db_journey.standardclasscar);
     $('#dept_station .typeahead').typeahead('val', db_journey.getItem('dept_station'));
-    $("#dept_time").attr("value", db_journey.dept_time);
+    $('#dept_time').val(db_journey.dept_time);
 }
 
 function dbJourneyGo() {
@@ -163,6 +163,10 @@ function dbHeadcountGo() {
     db_headcount.setItem('count_point', f.elements['count_point'].value);
     db_headcount.setItem('first_class', f.elements['first_class'].value);
     db_headcount.setItem('standard_class', f.elements['standard_class'].value);
+
+    if (!db_journey.dept_time) {
+        db_journey.setItem('dept_time', '');
+    }
 
     $('#loadingmessage').show();  // show the loading message.
     $.ajax({
