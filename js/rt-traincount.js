@@ -180,7 +180,7 @@ function dbHeadcountGo() {
             full_name: db_user.getItem('full_name'),
             email_address: db_user.getItem('email_address'),
             mobile_number: db_user.getItem('mobile_number'),
-            mobile_number: db_user.getItem('depot')
+            depot: db_user.getItem('depot')
         },
         //change the url for your project
         success: function (data) {
