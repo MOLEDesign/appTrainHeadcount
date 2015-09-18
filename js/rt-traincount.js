@@ -174,7 +174,6 @@ function dbHeadcountGo() {
             standard_class: db_headcount.getItem('standard_class'),
             headcode: db_journey.getItem('headcode'),
             time: db_journey.getItem('time'),
-            destination: db_journey.getItem('destination'),
             firstclasscar: db_journey.getItem('firstclasscar'),
             standardclasscar: db_journey.getItem('standardclasscar'),
             full_name: db_user.getItem('full_name'),
