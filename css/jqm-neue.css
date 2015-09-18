@@ -1229,9 +1229,9 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-footer .ui-btn-left,
 .ui-footer .ui-btn-right,
 .ui-header-fixed.ui-fixed-hidden .ui-btn-left,
-.ui-header-fixed.ui-fixed-hidden .ui-btn-right { position: absolute; top: 3px; }
+.ui-header-fixed.ui-fixed-hidden .ui-btn-right { position: absolute; top: 6px; }
 .ui-header-fixed .ui-btn-left,
-.ui-header-fixed .ui-btn-right { top: 4px;}
+.ui-header-fixed .ui-btn-right { top: 6px;}
 .ui-header .ui-btn-left,
 .ui-footer .ui-btn-left { left: 5px; }
 .ui-header .ui-btn-right,
