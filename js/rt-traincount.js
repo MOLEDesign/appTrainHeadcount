@@ -42,7 +42,7 @@ function fadeIn() {
 }
 
 function loadPageFade(urlvar) {
-    $("body").fadeOut(500, function(){ window.location.href = urlvar; });
+    $("body").fadeOut(50, function(){ window.location.href = urlvar; });
 }
 
 
@@ -171,7 +171,7 @@ function dbHeadcountGo() {
     $('#loadingmessage').show();  // show the loading message.
     $.ajax({
         type: 'POST',
-        url: 'http://railtracks.gwtrains.co.uk/components/com_rtheadcount/mobile/save_2_2_0.php',
+        url: 'http://railtrcks.gwtrains.co.uk/components/com_rtheadcount/mobile/save_2_2_0.php',
         data: {
             count_point: db_headcount.getItem('count_point'),
             first_class: db_headcount.getItem('first_class'),
@@ -198,6 +198,10 @@ function dbHeadcountGo() {
         },
         error: function () {
             alert('There was an error recording your headcount. Please check signal strength and try again');
+            $("#count_point .typeahead").typeahead('val', db_headcount.getItem('count_point'));
+            $('#first_class').val(db_headcount.first_class);
+            $('#standard_class').val(db_headcount.standard_class);
+            loadPageFade('count_headcount.html');
         }
     });
 
